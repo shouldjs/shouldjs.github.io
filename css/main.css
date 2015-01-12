@@ -989,7 +989,7 @@ hr {
   bottom: 0;
   padding: 0 10px;
 }
-.doc-container h2:first-child {
+.doc-container div:first-child h2 {
   margin-top: 0;
 }
 .doc-container .doc-block {
