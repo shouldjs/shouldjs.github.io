@@ -457,6 +457,11 @@
             
             
         
+            
+            <li><a href="#assertion-propertywithdescriptor"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">propertyWithDescriptor</code></b></a></li>
+            
+            
+        
         </ul>
     </div>
     
@@ -524,6 +529,13 @@
             
         
             
+            <li><a href="#assertion-class"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">class</code></b></a></li>
+            
+            
+            <li><a href="#assertion-class" class="alias"><code>Assertion#Class</code> → <code>Assertion#class</code></a></li>
+            
+        
+            
             <li><a href="#assertion-instanceof"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">instanceof</code></b></a></li>
             
             
@@ -540,6 +552,13 @@
             
             <li><a href="#assertion-type"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">type</code></b></a></li>
             
+            
+        
+            
+            <li><a href="#assertion-undefined"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">undefined</code></b></a></li>
+            
+            
+            <li><a href="#assertion-undefined" class="alias"><code>Assertion#Undefined</code> → <code>Assertion#undefined</code></a></li>
             
         
         </ul>
@@ -2793,7 +2812,7 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Asserts given object has enumerable property with optionally value</p></div>
+            <div class="description-section" ><p>Asserts given object has enumerable property with optionally value. <strong>On success it change given object to be value of property</strong>.</p></div>
 
             
             
@@ -3098,6 +3117,46 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             <hr/>
         </div>
         
+        
+        <div class="doc-block">
+            <a id="assertion-propertywithdescriptor"></a>
+            <h3><a id=""></a><code>Assertion#propertyWithDescriptor(name, desc)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has some descriptor. <strong>On success it change given object to be value of property</strong>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
+                </li>
+                
+                <li>
+                    <code>desc</code> <em>(Object)</em>: <p>Descriptor like used in Object.defineProperty (not required to add all properties)</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.propertyWithDescriptor(<span class="hljs-string">'a'</span>, { enumerable: <span class="hljs-literal">true</span> });</code></pre>
+            
+            <hr/>
+        </div>
+        
 
     </div>
     
@@ -3387,6 +3446,33 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
         
         
         <div class="doc-block">
+            <a id="assertion-class"></a>
+            <h3><a id=""></a><code>Assertion#class</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object has some internal [[Class]], via Object.prototype.toString call</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#Class</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
             <a id="assertion-instanceof"></a>
             <h3><a id=""></a><code>Assertion#instanceof(constructor, [description])</code></h3>
 
@@ -3481,6 +3567,33 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
                 </li>
                 
             </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-undefined"></a>
+            <h3><a id=""></a><code>Assertion#undefined</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is undefined</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#Undefined</em></div>
+            
+
             
             
             
