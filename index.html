@@ -564,6 +564,28 @@
         </ul>
     </div>
     
+    <div>
+        <h2><code>es6</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-iterable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterable</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-iterator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterator</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-iterator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterator</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
 </div>
 <div class="doc-container">
     
@@ -2023,7 +2045,7 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
             <ol>
                 
                 <li>
-                    <code>[message]</code> <em>(string|RegExp|Function|Object)</em>: <p>Message to match or properties</p>
+                    <code>[message]</code> <em>(string|RegExp|Function|Object|GeneratorFunction|GeneratorObject)</em>: <p>Message to match or properties</p>
                 </li>
                 
                 <li>
@@ -2045,7 +2067,10 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
 <span class="hljs-keyword">var</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>();
 error.a = <span class="hljs-number">10</span>;
 (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> error; }).should.throw(<span class="hljs-built_in">Error</span>, { a: <span class="hljs-number">10</span> });
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> error; }).should.throw({ a: <span class="hljs-number">10</span> });</code></pre>
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> error; }).should.throw({ a: <span class="hljs-number">10</span> });
+(<span class="hljs-function"><span class="hljs-keyword">function</span>*<span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">yield</span> throwError();
+}).should.throw();</code></pre>
             
             <hr/>
         </div>
@@ -3596,6 +3621,84 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             
             <h4>Aliases</h4>
             <div><em>Assertion#Undefined</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“es6” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterable"></a>
+            <h3><a id=""></a><code>Assertion#iterable</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object supports es6 iterable protocol (just check<br />that object has property Symbol.iterator, which is a function)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterator"></a>
+            <h3><a id=""></a><code>Assertion#iterator</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object supports es6 iterator protocol (just check<br />that object has property next, which is a function)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterator"></a>
+            <h3><a id=""></a><code>Assertion#iterator</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is a generator object</p></div>
+
+            
+            
+            
             
 
             
