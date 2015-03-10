@@ -279,6 +279,28 @@
     </div>
     
     <div>
+        <h2><code>assertion es6</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-generator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">generator</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-iterable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterable</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-iterator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterator</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
         <h2><code>assertion http</code></h2>
         <ul>
         
@@ -559,28 +581,6 @@
             
             
             <li><a href="#assertion-undefined" class="alias"><code>Assertion#Undefined</code> → <code>Assertion#undefined</code></a></li>
-            
-        
-        </ul>
-    </div>
-    
-    <div>
-        <h2><code>es6</code></h2>
-        <ul>
-        
-            
-            <li><a href="#assertion-iterable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterable</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-iterator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterator</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-iterator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterator</code></b></a></li>
-            
             
         
         </ul>
@@ -2071,6 +2071,84 @@ error.a = <span class="hljs-number">10</span>;
 (<span class="hljs-function"><span class="hljs-keyword">function</span>*<span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">yield</span> throwError();
 }).should.throw();</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion es6” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-generator"></a>
+            <h3><a id=""></a><code>Assertion#generator</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is a generator object</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterable"></a>
+            <h3><a id=""></a><code>Assertion#iterable</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object supports es6 iterable protocol (just check<br />that object has property Symbol.iterator, which is a function)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterator"></a>
+            <h3><a id=""></a><code>Assertion#iterator</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object supports es6 iterator protocol (just check<br />that object has property next, which is a function)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
             
             <hr/>
         </div>
@@ -3621,84 +3699,6 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             
             <h4>Aliases</h4>
             <div><em>Assertion#Undefined</em></div>
-            
-
-            
-            
-            
-            
-            
-            <hr/>
-        </div>
-        
-
-    </div>
-    
-    <div>
-        <h2><code>“es6” Members</code></h2>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-iterable"></a>
-            <h3><a id=""></a><code>Assertion#iterable</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Assert given object supports es6 iterable protocol (just check<br />that object has property Symbol.iterator, which is a function)</p></div>
-
-            
-            
-            
-            
-
-            
-            
-            
-            
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-iterator"></a>
-            <h3><a id=""></a><code>Assertion#iterator</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Assert given object supports es6 iterator protocol (just check<br />that object has property next, which is a function)</p></div>
-
-            
-            
-            
-            
-
-            
-            
-            
-            
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-iterator"></a>
-            <h3><a id=""></a><code>Assertion#iterator</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Assert given object is a generator object</p></div>
-
-            
-            
-            
             
 
             
