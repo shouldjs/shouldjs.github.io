@@ -337,6 +337,11 @@
             
         
             
+            <li><a href="#assertion-matchany"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">matchAny</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#assertion-matcheach"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">matchEach</code></b></a></li>
             
             
@@ -2364,6 +2369,51 @@ error.a = <span class="hljs-number">10</span>;
 .match({ <span class="hljs-string">'0'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'1'</span>: <span class="hljs-regexp">/c$/</span>, <span class="hljs-string">'2'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
    <span class="hljs-keyword">return</span> it.should.have.property(<span class="hljs-string">'d'</span>, <span class="hljs-number">10</span>);
 }});</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-matchany"></a>
+            <h3><a id=""></a><code>Assertion#matchAny(other, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts if any of given object values or array elements match <code>other</code> object, using some assumptions:<br />First object matched if they are equal,<br />If <code>other</code> is a regexp - matching with regexp<br />If <code>other</code> is a function check if this function throws AssertionError on given object or return false - it will be assumed as not matched<br />All other cases check if this <code>other</code> equal to each element</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Object to match</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-regexp">/\w+/</span>);
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-string">'a'</span>);
+
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
+
+{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'b'</span>, c: <span class="hljs-string">'c'</span> }.should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
             
             <hr/>
         </div>
