@@ -412,6 +412,11 @@
             
         
             
+            <li><a href="#assertion-fulfilledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">fulfilledWith</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#assertion-rejected"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">rejected</code></b></a></li>
             
             
@@ -2806,6 +2811,41 @@ error.a = <span class="hljs-number">10</span>;
             
             <h4>Example</h4>
             <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-fulfilledwith"></a>
+            <h3><a id=""></a><code>Assertion#fulfilledWith()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given promise will be fulfilled with some expected value.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-promised --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Promise)</em></p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilledWith(<span class="hljs-number">10</span>);</code></pre>
             
             <hr/>
         </div>
