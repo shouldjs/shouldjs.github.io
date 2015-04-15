@@ -211,6 +211,8 @@
             
             <li><a href="#assertion-be" class="alias"><code>Assertion#have</code> → <code>Assertion#be</code></a></li>
             
+            <li><a href="#assertion-be" class="alias"><code>Assertion#has</code> → <code>Assertion#be</code></a></li>
+            
             <li><a href="#assertion-be" class="alias"><code>Assertion#with</code> → <code>Assertion#be</code></a></li>
             
             <li><a href="#assertion-be" class="alias"><code>Assertion#is</code> → <code>Assertion#be</code></a></li>
@@ -218,6 +220,8 @@
             <li><a href="#assertion-be" class="alias"><code>Assertion#which</code> → <code>Assertion#be</code></a></li>
             
             <li><a href="#assertion-be" class="alias"><code>Assertion#the</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#it</code> → <code>Assertion#be</code></a></li>
             
         
         </ul>
@@ -1781,7 +1785,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
             
             
             <h4>Aliases</h4>
-            <div><em>Assertion#an, Assertion#of, Assertion#a, Assertion#and, Assertion#have, Assertion#with, Assertion#is, Assertion#which, Assertion#the</em></div>
+            <div><em>Assertion#an, Assertion#of, Assertion#a, Assertion#and, Assertion#have, Assertion#has, Assertion#with, Assertion#is, Assertion#which, Assertion#the, Assertion#it</em></div>
             
 
             
@@ -1844,9 +1848,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert that given object is contain equally structured object on the same depth level.<br />If given object is an array and <code>other</code> is an array it checks that the eql elements is going in the same sequence in given array (recursive)<br />For string it is working as <code>Assertion#containEql
-If given object is an object it checks that the same keys contain deep equal values (recursive)
-On other cases it try to check with</code>.eql`</p></div>
+            <div class="description-section" ><p>Assert that given object is contain equally structured object on the same depth level.<br />If given object is an array and <code>other</code> is an array it checks that the eql elements is going in the same sequence in given array (recursive)<br />If given object is an object it checks that the same keys contain deep equal values (recursive)<br />On other cases it try to check with <code>.eql</code></p></div>
 
             
             
@@ -1870,8 +1872,6 @@ On other cases it try to check with</code>.eql`</p></div>
             <h4>Example</h4>
             <pre><code class="hljs javascript">[ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].should.containDeepOrdered([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);
 [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]].should.containDeepOrdered([ <span class="hljs-number">1</span>, [ <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]]);
-
-<span class="hljs-string">'123'</span>.should.containDeepOrdered(<span class="hljs-string">'1'</span>)
 
 ({ a: <span class="hljs-number">10</span>, b: { c: <span class="hljs-number">10</span>, d: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] }}).should.containDeepOrdered({a: <span class="hljs-number">10</span>});
 ({ a: <span class="hljs-number">10</span>, b: { c: <span class="hljs-number">10</span>, d: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] }}).should.containDeepOrdered({b: {c: <span class="hljs-number">10</span>}});
