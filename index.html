@@ -548,6 +548,11 @@
             
         
             
+            <li><a href="#assertion-alwaysthrew"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysThrew</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#assertion-callcount"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">callCount</code></b></a></li>
             
             
@@ -604,11 +609,6 @@
         
             
             <li><a href="#assertion-nevercalledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">neverCalledWithMatch</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-threw"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">threw</code></b></a></li>
             
             
         
@@ -3754,6 +3754,45 @@ Class.should.be.alwaysCalledWithNew;</code></pre>
         
         
         <div class="doc-block">
+            <a id="assertion-alwaysthrew"></a>
+            <h3><a id=""></a><code>Assertion#alwaysThrew(ex)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy always threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>ex</code> <em>(string|Error)</em>: <ul>
+<li>exception to be thrown</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
             <a id="assertion-callcount"></a>
             <h3><a id=""></a><code>Assertion#callCount(count)</code></h3>
 
@@ -4228,45 +4267,6 @@ callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span cla
             </div>
 
             <div class="description-section" ><p>Passes if the spy threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
-
-            
-            
-            <h4>Module</h4>
-            <div><code>npm i should-sinon --save-dev</code></div>
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>ex</code> <em>(string|Error)</em>: <ul>
-<li>exception to be thrown</li>
-</ul>
-
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-threw"></a>
-            <h3><a id=""></a><code>Assertion#threw(ex)</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Passes if the spy always threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
 
             
             
