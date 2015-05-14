@@ -519,6 +519,108 @@
     </div>
     
     <div>
+        <h2><code>assertion stubs</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-alwayscalledon"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledOn</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwithexactly"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWithExactly</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWithMatch</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwithnew"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWithNew</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-callcount"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">callCount</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-called"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">called</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledon"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledOn</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledonce"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledOnce</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledthrice"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledThrice</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledtwice"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledTwice</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwithexactly"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWithExactly</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWithMatch</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwithnew"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWithNew</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-nevercalledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">neverCalledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-nevercalledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">neverCalledWithMatch</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-threw"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">threw</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-threw"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">threw</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
         <h2><code>assertion types</code></h2>
         <ul>
         
@@ -3436,6 +3538,760 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             
             <h4>Example</h4>
             <pre><code class="hljs javascript"><span class="hljs-string">'abc'</span>.should.startWith(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion stubs” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledon"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledOn(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called with given object as this always. So if you call stub several times<br />all should be with the same object</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>: <ul>
+<li>object that was used as this</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+<span class="hljs-keyword">var</span> obj = {};
+callback.call(obj);
+callback.should.be.alwaysCalledOn(obj);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwith"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWith(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+
+callback(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+callback.should.be.alwaysCalledWith(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwithexactly"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithExactly(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy was always called with the provided arguments and no others.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwithmatch"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithMatch(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if spy was always called with matching arguments (and possibly others).</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwithnew"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithNew</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> Class = sinon.spy();
+
+<span class="hljs-keyword">var</span> c1 = <span class="hljs-keyword">new</span> Class();
+<span class="hljs-keyword">var</span> c2 = <span class="hljs-keyword">new</span> Class();
+
+Class.should.be.alwaysCalledWithNew;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-callcount"></a>
+            <h3><a id=""></a><code>Assertion#callCount(count)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exact number of times</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>count</code> <em>(Number)</em>: <ul>
+<li>number of calles</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback.should.have.callCount(<span class="hljs-number">0</span>);
+callback();
+callback.should.have.callCount(<span class="hljs-number">1</span>);
+callback();
+callback.should.have.callCount(<span class="hljs-number">2</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-called"></a>
+            <h3><a id=""></a><code>Assertion#called</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at least once</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback.should.be.called;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledon"></a>
+            <h3><a id=""></a><code>Assertion#calledOn(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called with given object as this</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>: <ul>
+<li>object that was used as this</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+<span class="hljs-keyword">var</span> obj = {};
+callback.call(obj);
+callback.should.be.calledOn(obj);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledonce"></a>
+            <h3><a id=""></a><code>Assertion#calledOnce</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exactly once</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback.should.be.calledOnce;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledthrice"></a>
+            <h3><a id=""></a><code>Assertion#calledThrice</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exactly thrice</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback();
+callback();
+callback.should.be.calledThrice;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledtwice"></a>
+            <h3><a id=""></a><code>Assertion#calledTwice</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exactly twice</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback();
+callback.should.be.calledTwice;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwith"></a>
+            <h3><a id=""></a><code>Assertion#calledWith(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts that stub was called with given arguments</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+
+callback(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+callback.should.be.calledWith(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwithexactly"></a>
+            <h3><a id=""></a><code>Assertion#calledWithExactly(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if call received provided arguments and no others.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwithmatch"></a>
+            <h3><a id=""></a><code>Assertion#calledWithMatch(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if spy was called with matching arguments (and possibly others).</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwithnew"></a>
+            <h3><a id=""></a><code>Assertion#calledWithNew</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts that stub was called with new</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> Class = sinon.spy();
+
+<span class="hljs-keyword">var</span> c = <span class="hljs-keyword">new</span> Class();
+
+Class.should.be.calledWithNew;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-nevercalledwith"></a>
+            <h3><a id=""></a><code>Assertion#neverCalledWith(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if the spy/stub was never called with the provided arguments.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+
+callback(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-nevercalledwithmatch"></a>
+            <h3><a id=""></a><code>Assertion#neverCalledWithMatch(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if the spy/stub was never called with matching arguments.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-threw"></a>
+            <h3><a id=""></a><code>Assertion#threw(ex)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>ex</code> <em>(string|Error)</em>: <ul>
+<li>exception to be thrown</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-threw"></a>
+            <h3><a id=""></a><code>Assertion#threw(ex)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy always threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>ex</code> <em>(string|Error)</em>: <ul>
+<li>exception to be thrown</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
             
             <hr/>
         </div>
