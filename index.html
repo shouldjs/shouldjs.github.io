@@ -17,16 +17,6 @@
         <ul>
         
             
-            <li><a href="#type"><b><code class="name">Type</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#typechecker"><b><code class="name">TypeChecker</code></b></a></li>
-            
-            
-        
-            
             <li><a href="#getglobaltype"><b><code class="name">getGlobalType</code></b></a></li>
             
             
@@ -722,82 +712,6 @@
     
     <div>
         <h2><code>“global” Members</code></h2>
-        
-        
-        <div class="doc-block">
-            <a id="type"></a>
-            <h3><a id=""></a><code>Type(type, cls, sub)</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Simple data function to store type information</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>type</code> <em>(string)</em>: <p>Usually what is returned from typeof</p>
-                </li>
-                
-                <li>
-                    <code>cls</code> <em>(string)</em>: <p>Sanitized @Class via Object.prototype.toString</p>
-                </li>
-                
-                <li>
-                    <code>sub</code> <em>(string)</em>: <p>If type and cls the same, and need to specify somehow </p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript"><span class="hljs-comment">//for null</span>
-<span class="hljs-keyword">new</span> Type(<span class="hljs-string">'null'</span>);
-
-<span class="hljs-comment">//for Date</span>
-<span class="hljs-keyword">new</span> Type(<span class="hljs-string">'object'</span>, <span class="hljs-string">'date'</span>);
-
-<span class="hljs-comment">//for Uint8Array</span>
-
-<span class="hljs-keyword">new</span> Type(<span class="hljs-string">'object'</span>, <span class="hljs-string">'typed-array'</span>, <span class="hljs-string">'uint8'</span>);</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="typechecker"></a>
-            <h3><a id=""></a><code>TypeChecker()</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Function to store type checks</p></div>
-
-            
-            
-            
-            
-
-            
-            
-            
-            
-            
-            <hr/>
-        </div>
         
         
         <div class="doc-block">
@@ -2463,7 +2377,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">res.should.be.json;</code></pre>
+            <pre><code class="hljs javascript">res.should.be.html();</code></pre>
             
             <hr/>
         </div>
@@ -2493,7 +2407,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">res.should.be.json;</code></pre>
+            <pre><code class="hljs javascript">res.should.be.json();</code></pre>
             
             <hr/>
         </div>
@@ -2961,9 +2875,9 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">promise.should.be.Promise;
-(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise;
-(<span class="hljs-number">10</span>).should.not.be.a.Promise;</code></pre>
+            <pre><code class="hljs javascript">promise.should.be.Promise();
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise();
+(<span class="hljs-number">10</span>).should.not.be.a.Promise();</code></pre>
             
             <hr/>
         </div>
@@ -3036,7 +2950,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();</code></pre>
             
             <hr/>
         </div>
@@ -3106,7 +3020,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected();</code></pre>
             
             <hr/>
         </div>
