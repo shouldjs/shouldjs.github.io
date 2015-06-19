@@ -783,7 +783,7 @@
             
             <h4>Example</h4>
             <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> should = <span class="hljs-built_in">require</span>(<span class="hljs-string">'should'</span>);
-should(<span class="hljs-string">'abc'</span>).be.a.String;</code></pre>
+should(<span class="hljs-string">'abc'</span>).be.a.String();</code></pre>
             
             <hr/>
         </div>
@@ -864,8 +864,7 @@ should(<span class="hljs-string">'abc'</span>).be.a.String;</code></pre>
             </div>
 
             <div class="description-section" ><p>Object with configuration.<br />It contains such properties:</p><ul>
-<li><code>checkProtoEql</code> boolean - Affect if <code>.eql</code> will check objects prototypes</li>
-<li><code>useOldDeepEqual</code> boolean - Use old deepEqual implementation, that was copied from node&#39;s assert.deepEqual (will be removed in 5.x)</li>
+<li><code>checkProtoEql</code> boolean - Affect if <code>.eql</code> will check objects prototypes<br />Also it can contain options for should-format.</li>
 </ul>
 </div>
 
@@ -1181,7 +1180,7 @@ a.fail();
         
         <div class="doc-block">
             <a id="assertion-add"></a>
-            <h3><a id=""></a><code>Assertion.add(name, func, [isGetter])</code></h3>
+            <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1204,10 +1203,6 @@ a.fail();
                 
                 <li>
                     <code>func</code> <em>(Function)</em>: <p>Function that will be called on executing assertion</p>
-                </li>
-                
-                <li>
-                    <code>[isGetter]</code> <em>(Boolean)</em>: <p>If this assertion is getter. By default it is false.</p>
                 </li>
                 
             </ol>
