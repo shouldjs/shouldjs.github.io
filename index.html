@@ -17,6 +17,11 @@
         <ul>
         
             
+            <li><a href="#getglobaltype"><b><code class="name">getGlobalType</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#should"><b><code class="name">should</code></b></a></li>
             
             
@@ -344,10 +349,14 @@
             <li><a href="#assertion-matchany"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">matchAny</code></b></a></li>
             
             
+            <li><a href="#assertion-matchany" class="alias"><code>Assertion#matchEvery</code> → <code>Assertion#matchAny</code></a></li>
+            
         
             
             <li><a href="#assertion-matcheach"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">matchEach</code></b></a></li>
             
+            
+            <li><a href="#assertion-matcheach" class="alias"><code>Assertion#matchSome</code> → <code>Assertion#matchEach</code></a></li>
             
         
         </ul>
@@ -710,6 +719,39 @@
         
         
         <div class="doc-block">
+            <a id="getglobaltype"></a>
+            <h3><a id=""></a><code>getGlobalType(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Get type information of anything</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(any)</em>: <p>Anything that could require type information</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
             <a id="should"></a>
             <h3><a id=""></a><code>should(obj)</code></h3>
 
@@ -745,7 +787,7 @@
             
             <h4>Example</h4>
             <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> should = <span class="hljs-built_in">require</span>(<span class="hljs-string">'should'</span>);
-should(<span class="hljs-string">'abc'</span>).be.a.String;</code></pre>
+should(<span class="hljs-string">'abc'</span>).be.a.String();</code></pre>
             
             <hr/>
         </div>
@@ -826,8 +868,7 @@ should(<span class="hljs-string">'abc'</span>).be.a.String;</code></pre>
             </div>
 
             <div class="description-section" ><p>Object with configuration.<br />It contains such properties:</p><ul>
-<li><code>checkProtoEql</code> boolean - Affect if <code>.eql</code> will check objects prototypes</li>
-<li><code>useOldDeepEqual</code> boolean - Use old deepEqual implementation, that was copied from node&#39;s assert.deepEqual (will be removed in 5.x)</li>
+<li><code>checkProtoEql</code> boolean - Affect if <code>.eql</code> will check objects prototypes<br />Also it can contain options for should-format.</li>
 </ul>
 </div>
 
@@ -994,7 +1035,7 @@ should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<s
   Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
      <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> };
 
-     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number;
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number();
      <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'path'</span>);
  })
 })</code></pre>
@@ -1143,7 +1184,7 @@ a.fail();
         
         <div class="doc-block">
             <a id="assertion-add"></a>
-            <h3><a id=""></a><code>Assertion.add(name, func, [isGetter])</code></h3>
+            <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1168,10 +1209,6 @@ a.fail();
                     <code>func</code> <em>(Function)</em>: <p>Function that will be called on executing assertion</p>
                 </li>
                 
-                <li>
-                    <code>[isGetter]</code> <em>(Boolean)</em>: <p>If this assertion is getter. By default it is false.</p>
-                </li>
-                
             </ol>
             
             
@@ -1182,7 +1219,7 @@ a.fail();
             <pre><code class="hljs javascript">Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
      <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> };
 
-     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number;
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number();
      <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'path'</span>);
 });</code></pre>
             
@@ -1793,8 +1830,8 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.not.be.false;
-<span class="hljs-literal">false</span>.should.be.False;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.not.be.false();
+<span class="hljs-literal">false</span>.should.be.false();</code></pre>
             
             <hr/>
         </div>
@@ -1821,13 +1858,13 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.be.ok;
-<span class="hljs-string">''</span>.should.not.be.ok;
-should(<span class="hljs-literal">null</span>).not.be.ok;
-should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>).not.be.ok;
+            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.be.ok();
+<span class="hljs-string">''</span>.should.not.be.ok();
+should(<span class="hljs-literal">null</span>).not.be.ok();
+should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>).not.be.ok();
 
-(<span class="hljs-number">10</span>).should.be.ok;
-(<span class="hljs-number">0</span>).should.not.be.ok;</code></pre>
+(<span class="hljs-number">10</span>).should.be.ok();
+(<span class="hljs-number">0</span>).should.not.be.ok();</code></pre>
             
             <hr/>
         </div>
@@ -1857,10 +1894,10 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.be.true;
-<span class="hljs-literal">false</span>.should.not.be.True;
+            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.be.true();
+<span class="hljs-literal">false</span>.should.not.be.true();
 
-({ a: <span class="hljs-number">10</span>}).should.not.be.true;</code></pre>
+({ a: <span class="hljs-number">10</span>}).should.not.be.true();</code></pre>
             
             <hr/>
         </div>
@@ -2339,7 +2376,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">res.should.be.json;</code></pre>
+            <pre><code class="hljs javascript">res.should.be.html();</code></pre>
             
             <hr/>
         </div>
@@ -2369,7 +2406,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">res.should.be.json;</code></pre>
+            <pre><code class="hljs javascript">res.should.be.json();</code></pre>
             
             <hr/>
         </div>
@@ -2465,7 +2502,7 @@ error.a = <span class="hljs-number">10</span>;
   <span class="hljs-keyword">return</span> n &lt; <span class="hljs-number">0</span>;
 });
 (<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
-   it.should.be.an.Array;
+   it.should.be.an.Array();
 });
 ({ a: <span class="hljs-number">10</span>, b: <span class="hljs-string">'abc'</span>, c: { d: <span class="hljs-number">10</span> }, d: <span class="hljs-number">0</span> }).should
 .match({ a: <span class="hljs-number">10</span>, b: <span class="hljs-regexp">/c$/</span>, c: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
@@ -2494,6 +2531,9 @@ error.a = <span class="hljs-number">10</span>;
             
             
             
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#matchEvery</em></div>
             
 
             
@@ -2539,6 +2579,9 @@ error.a = <span class="hljs-number">10</span>;
             
             
             
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#matchSome</em></div>
             
 
             
@@ -2598,8 +2641,8 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.not.be.Infinity;
-<span class="hljs-literal">NaN</span>.should.not.be.Infinity;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.not.be.Infinity();
+<span class="hljs-literal">NaN</span>.should.not.be.Infinity();</code></pre>
             
             <hr/>
         </div>
@@ -2626,8 +2669,8 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.not.be.NaN;
-<span class="hljs-literal">NaN</span>.should.be.NaN;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.not.be.NaN();
+<span class="hljs-literal">NaN</span>.should.be.NaN();</code></pre>
             
             <hr/>
         </div>
@@ -2837,9 +2880,9 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">promise.should.be.Promise;
-(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise;
-(<span class="hljs-number">10</span>).should.not.be.a.Promise;</code></pre>
+            <pre><code class="hljs javascript">promise.should.be.Promise();
+(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise();
+(<span class="hljs-number">10</span>).should.not.be.a.Promise();</code></pre>
             
             <hr/>
         </div>
@@ -2885,7 +2928,7 @@ error.a = <span class="hljs-number">10</span>;
         
         <div class="doc-block">
             <a id="assertion-fulfilled"></a>
-            <h3><a id=""></a><code>Assertion#fulfilled</code></h3>
+            <h3><a id=""></a><code>Assertion#fulfilled()</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2912,7 +2955,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();</code></pre>
             
             <hr/>
         </div>
@@ -2955,7 +2998,7 @@ error.a = <span class="hljs-number">10</span>;
         
         <div class="doc-block">
             <a id="assertion-rejected"></a>
-            <h3><a id=""></a><code>Assertion#rejected</code></h3>
+            <h3><a id=""></a><code>Assertion#rejected()</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2982,7 +3025,7 @@ error.a = <span class="hljs-number">10</span>;
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected;</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected();</code></pre>
             
             <hr/>
         </div>
@@ -3091,9 +3134,9 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript"><span class="hljs-string">''</span>.should.be.empty;
-[].should.be.empty;
-({}).should.be.empty;</code></pre>
+            <pre><code class="hljs javascript"><span class="hljs-string">''</span>.should.be.empty();
+[].should.be.empty();
+({}).should.be.empty();</code></pre>
             
             <hr/>
         </div>
@@ -3865,7 +3908,7 @@ callback.should.have.callCount(<span class="hljs-number">2</span>);</code></pre>
             <h4>Example</h4>
             <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
 callback();
-callback.should.be.called;</code></pre>
+callback.should.be.called();</code></pre>
             
             <hr/>
         </div>
@@ -3942,7 +3985,7 @@ callback.should.be.calledOn(obj);</code></pre>
             <h4>Example</h4>
             <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
 callback();
-callback.should.be.calledOnce;</code></pre>
+callback.should.be.calledOnce();</code></pre>
             
             <hr/>
         </div>
@@ -3976,7 +4019,7 @@ callback.should.be.calledOnce;</code></pre>
 callback();
 callback();
 callback();
-callback.should.be.calledThrice;</code></pre>
+callback.should.be.calledThrice();</code></pre>
             
             <hr/>
         </div>
@@ -4009,7 +4052,7 @@ callback.should.be.calledThrice;</code></pre>
             <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
 callback();
 callback();
-callback.should.be.calledTwice;</code></pre>
+callback.should.be.calledTwice();</code></pre>
             
             <hr/>
         </div>
