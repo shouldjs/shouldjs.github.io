@@ -272,6 +272,16 @@
             <li><a href="#assertion-equal" class="alias"><code>Assertion#exactly</code> → <code>Assertion#equal</code></a></li>
             
         
+            
+            <li><a href="#assertion-equaloneof"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">equalOneOf</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-oneof"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">oneOf</code></b></a></li>
+            
+            
+        
         </ul>
     </div>
     
@@ -386,6 +396,13 @@
             
         
             
+            <li><a href="#assertion-aboveorequal"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">aboveOrEqual</code></b></a></li>
+            
+            
+            <li><a href="#assertion-aboveorequal" class="alias"><code>Assertion#greaterThanOrEqual</code> → <code>Assertion#aboveOrEqual</code></a></li>
+            
+        
+            
             <li><a href="#assertion-approximately"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">approximately</code></b></a></li>
             
             
@@ -395,6 +412,13 @@
             
             
             <li><a href="#assertion-below" class="alias"><code>Assertion#lessThan</code> → <code>Assertion#below</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-beloworequal"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">belowOrEqual</code></b></a></li>
+            
+            
+            <li><a href="#assertion-beloworequal" class="alias"><code>Assertion#lessThanOrEqual</code> → <code>Assertion#belowOrEqual</code></a></li>
             
         
             
@@ -2169,6 +2193,80 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
             <hr/>
         </div>
         
+        
+        <div class="doc-block">
+            <a id="assertion-equaloneof"></a>
+            <h3><a id=""></a><code>Assertion#equalOneOf(vals)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Exact comparison using === to be one of supplied objects.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>vals</code> <em>(*)</em>: <p>Expected values</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-string">'ab'</span>.should.be.equalOneOf(<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>);
+<span class="hljs-string">'ab'</span>.should.be.equalOneOf([<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>]);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-oneof"></a>
+            <h3><a id=""></a><code>Assertion#oneOf(vals)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Exact comparison using .eql to be one of supplied objects.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>vals</code> <em>(*)</em>: <p>Expected values</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({a: <span class="hljs-number">10</span>}).should.be.oneOf(<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>, {a: <span class="hljs-number">10</span>});
+({a: <span class="hljs-number">10</span>}).should.be.oneOf([<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>, {a: <span class="hljs-number">10</span>}]);</code></pre>
+            
+            <hr/>
+        </div>
+        
 
     </div>
     
@@ -2725,6 +2823,50 @@ error.a = <span class="hljs-number">10</span>;
         
         
         <div class="doc-block">
+            <a id="assertion-aboveorequal"></a>
+            <h3><a id=""></a><code>Assertion#aboveOrEqual(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number above <code>n</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#greaterThanOrEqual</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Margin number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.be.aboveOrEqual(<span class="hljs-number">0</span>);
+(<span class="hljs-number">10</span>).should.be.aboveOrEqual(<span class="hljs-number">10</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
             <a id="assertion-approximately"></a>
             <h3><a id=""></a><code>Assertion#approximately(value, delta, [description])</code></h3>
 
@@ -2806,6 +2948,50 @@ error.a = <span class="hljs-number">10</span>;
             
             <h4>Example</h4>
             <pre><code class="hljs javascript">(<span class="hljs-number">0</span>).should.be.below(<span class="hljs-number">10</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-beloworequal"></a>
+            <h3><a id=""></a><code>Assertion#belowOrEqual(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number below <code>n</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#lessThanOrEqual</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Margin number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">0</span>).should.be.belowOrEqual(<span class="hljs-number">10</span>);
+(<span class="hljs-number">0</span>).should.be.belowOrEqual(<span class="hljs-number">0</span>);</code></pre>
             
             <hr/>
         </div>
