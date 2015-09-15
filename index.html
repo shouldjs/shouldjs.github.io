@@ -2568,7 +2568,7 @@ error.a = <span class="hljs-number">10</span>;
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Asserts if given object match <code>other</code> object, using some assumptions:<br />First object matched if they are equal,<br />If <code>other</code> is a regexp and given object is a string check on matching with regexp<br />If <code>other</code> is a regexp and given object is an array check if all elements matched regexp<br />If <code>other</code> is a regexp and given object is an object check values on matching regexp<br />If <code>other</code> is a function check if this function throws AssertionError on given object or return false - it will be assumed as not matched<br />If <code>other</code> is an object check if the same keys matched with above rules<br />All other cases failed</p></div>
+            <div class="description-section" ><p>Asserts if given object match <code>other</code> object, using some assumptions:<br />First object matched if they are equal,<br />If <code>other</code> is a regexp and given object is a string check on matching with regexp<br />If <code>other</code> is a regexp and given object is an array check if all elements matched regexp<br />If <code>other</code> is a regexp and given object is an object check values on matching regexp<br />If <code>other</code> is a function check if this function throws AssertionError on given object or return false - it will be assumed as not matched<br />If <code>other</code> is an object check if the same keys matched with above rules<br />All other cases failed.</p><p>Usually it is right idea to add pre type assertions, like <code>.String()</code> or <code>.Object()</code> to be sure assertions will do what you are expecting.<br />Object iteration happen by keys (properties with enumerable: true), thus some objects can cause small pain. Typical example is js<br />Error - it by default has 2 properties <code>name</code> and <code>message</code>, but they both non-enumerable. In this case make sure you specify checking props (see examples).</p></div>
 
             
             
@@ -2615,7 +2615,20 @@ error.a = <span class="hljs-number">10</span>;
 [<span class="hljs-number">10</span>, <span class="hljs-string">'abc'</span>, { d: <span class="hljs-number">10</span> }, <span class="hljs-number">0</span>].should
 .match({ <span class="hljs-string">'0'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'1'</span>: <span class="hljs-regexp">/c$/</span>, <span class="hljs-string">'2'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
    <span class="hljs-keyword">return</span> it.should.have.property(<span class="hljs-string">'d'</span>, <span class="hljs-number">10</span>);
-}});</code></pre>
+}});
+
+<span class="hljs-keyword">var</span> myString = <span class="hljs-string">'abc'</span>;
+
+myString.should.be.a.String().and.match(<span class="hljs-regexp">/abc/</span>);
+
+myString = {};
+
+myString.should.match(<span class="hljs-regexp">/abc/</span>); <span class="hljs-comment">//yes this will pass</span>
+<span class="hljs-comment">//better to do</span>
+myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regexp">/abc/</span>);<span class="hljs-comment">//fixed</span>
+
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>)).should.match(<span class="hljs-regexp">/abc/</span>);<span class="hljs-comment">//passed because no keys</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>)).should.not.match({ message: <span class="hljs-regexp">/abc/</span> });<span class="hljs-comment">//check specified property</span></code></pre>
             
             <hr/>
         </div>
