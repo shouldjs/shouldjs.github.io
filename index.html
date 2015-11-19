@@ -1057,8 +1057,8 @@ should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<s
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">should.use(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(should, Assertion)</span> </span>{
-  Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <pre><code class="hljs javascript">should.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">should, Assertion</span>) </span>{
+  Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
      <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> };
 
      <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number();
@@ -1242,7 +1242,7 @@ a.fail();
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <pre><code class="hljs javascript">Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
      <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> };
 
      <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number();
@@ -2311,16 +2311,16 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw();
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-string">'fail'</span>);
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-regexp">/fail/</span>);
+            <pre><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw();
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-string">'fail'</span>);
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-regexp">/fail/</span>);
 
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-built_in">Error</span>);
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-built_in">Error</span>);
 <span class="hljs-keyword">var</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>();
 error.a = <span class="hljs-number">10</span>;
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> error; }).should.throw(<span class="hljs-built_in">Error</span>, { a: <span class="hljs-number">10</span> });
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">throw</span> error; }).should.throw({ a: <span class="hljs-number">10</span> });
-(<span class="hljs-function"><span class="hljs-keyword">function</span>*<span class="hljs-params">()</span> </span>{
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> error; }).should.throw(<span class="hljs-built_in">Error</span>, { a: <span class="hljs-number">10</span> });
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> error; }).should.throw({ a: <span class="hljs-number">10</span> });
+(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">yield</span> throwError();
 }).should.throw();</code></pre>
             
@@ -2601,19 +2601,19 @@ error.a = <span class="hljs-number">10</span>;
 
 [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.match(<span class="hljs-regexp">/[a-z]/</span>);
 
-(<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(n)</span> </span>{
+(<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
   <span class="hljs-keyword">return</span> n &lt; <span class="hljs-number">0</span>;
 });
-(<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
+(<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">it</span>) </span>{
    it.should.be.an.Array();
 });
 ({ a: <span class="hljs-number">10</span>, b: <span class="hljs-string">'abc'</span>, c: { d: <span class="hljs-number">10</span> }, d: <span class="hljs-number">0</span> }).should
-.match({ a: <span class="hljs-number">10</span>, b: <span class="hljs-regexp">/c$/</span>, c: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
+.match({ a: <span class="hljs-number">10</span>, b: <span class="hljs-regexp">/c$/</span>, c: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">it</span>) </span>{
    <span class="hljs-keyword">return</span> it.should.have.property(<span class="hljs-string">'d'</span>, <span class="hljs-number">10</span>);
 }});
 
 [<span class="hljs-number">10</span>, <span class="hljs-string">'abc'</span>, { d: <span class="hljs-number">10</span> }, <span class="hljs-number">0</span>].should
-.match({ <span class="hljs-string">'0'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'1'</span>: <span class="hljs-regexp">/c$/</span>, <span class="hljs-string">'2'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(it)</span> </span>{
+.match({ <span class="hljs-string">'0'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'1'</span>: <span class="hljs-regexp">/c$/</span>, <span class="hljs-string">'2'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">it</span>) </span>{
    <span class="hljs-keyword">return</span> it.should.have.property(<span class="hljs-string">'d'</span>, <span class="hljs-number">10</span>);
 }});
 
@@ -2674,9 +2674,9 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             <pre><code class="hljs javascript">[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-regexp">/\w+/</span>);
 [ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-string">'a'</span>);
 
-[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
 
-{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'b'</span>, c: <span class="hljs-string">'c'</span> }.should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
+{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'b'</span>, c: <span class="hljs-string">'c'</span> }.should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
             
             <hr/>
         </div>
@@ -2722,9 +2722,9 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             <pre><code class="hljs javascript">[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchEach(<span class="hljs-regexp">/\w+/</span>);
 [ <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>].should.matchEach(<span class="hljs-string">'a'</span>);
 
-[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>].should.matchEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>].should.matchEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
 
-{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'a'</span>, c: <span class="hljs-string">'a'</span> }.should.matchEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value)</span> </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
+{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'a'</span>, c: <span class="hljs-string">'a'</span> }.should.matchEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
             
             <hr/>
         </div>
@@ -3085,7 +3085,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             <h4>Example</h4>
             <pre><code class="hljs javascript">promise.should.be.Promise();
-(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise();
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise();
 (<span class="hljs-number">10</span>).should.not.be.a.Promise();</code></pre>
             
             <hr/>
@@ -3124,7 +3124,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.eventually.equal(<span class="hljs-number">10</span>);</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.eventually.equal(<span class="hljs-number">10</span>);</code></pre>
             
             <hr/>
         </div>
@@ -3159,7 +3159,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();</code></pre>
             
             <hr/>
         </div>
@@ -3194,7 +3194,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilledWith(<span class="hljs-number">10</span>);</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilledWith(<span class="hljs-number">10</span>);</code></pre>
             
             <hr/>
         </div>
@@ -3229,7 +3229,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected();</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected();</code></pre>
             
             <hr/>
         </div>
@@ -3264,8 +3264,8 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">failedPromise</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Promise(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resolve, reject)</span> </span>{
+            <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">failedPromise</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
     reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>));
   })
 }
@@ -3406,7 +3406,7 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             <ol>
                 
                 <li>
-                    <code>names</code> <em>(Array|...string|Object)</em>: <p>Names of property</p>
+                    <code>names</code> <em>(...Array|string|Object)</em>: <p>Names of property</p>
                 </li>
                 
             </ol>
@@ -3445,7 +3445,7 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             <ol>
                 
                 <li>
-                    <code>[keys]</code> <em>(Array|...string)</em>: <p>Keys to check</p>
+                    <code>[keys]</code> <em>(...Array|string)</em>: <p>Keys to check</p>
                 </li>
                 
             </ol>
@@ -3570,7 +3570,7 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             <ol>
                 
                 <li>
-                    <code>names</code> <em>(Array|...string|Object)</em>: <p>Names of property</p>
+                    <code>names</code> <em>(...Array|string|Object)</em>: <p>Names of property</p>
                 </li>
                 
             </ol>
@@ -3648,7 +3648,7 @@ failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boo
             <ol>
                 
                 <li>
-                    <code>properties</code> <em>(Array|...string)</em>: <p>Properties path to search</p>
+                    <code>properties</code> <em>(...Array|string)</em>: <p>Properties path to search</p>
                 </li>
                 
             </ol>
