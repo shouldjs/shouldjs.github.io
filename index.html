@@ -17,6 +17,26 @@
         <ul>
         
             
+            <li><a href="#assertion-add"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">add</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-addchain"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">addChain</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alias"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">alias</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#promisedassertion"><b><code class="name">PromisedAssertion</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#getglobaltype"><b><code class="name">getGlobalType</code></b></a></li>
             
             
@@ -80,16 +100,6 @@
         
             
             <li><a href="#assertion-not"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">not</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-add"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">add</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-alias"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">alias</code></b></a></li>
             
             
         
@@ -465,11 +475,6 @@
             
             
         
-            
-            <li><a href="#promisedassertion-then"><code class='parent'>PromisedAssertion</code><code class='mtype'>#</code><b><code class="name">then</code></b></a></li>
-            
-            
-        
         </ul>
     </div>
     
@@ -742,6 +747,161 @@
     
     <div>
         <h2><code>“global” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-add"></a>
+            <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Way to extend Assertion function. It uses some logic<br />to define only positive assertions and itself rule with negative assertion.</p><p>All actions happen in subcontext and this method take care about negation.<br />Potentially we can add some more modifiers that does not depends from state of assertion.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(String)</em>: <p>Name of assertion. It will be used for defining method or getter on Assertion.prototype</p>
+                </li>
+                
+                <li>
+                    <code>func</code> <em>(Function)</em>: <p>Function that will be called on executing assertion</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> }
+
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number()
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'path'</span>)
+})</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-addchain"></a>
+            <h3><a id=""></a><code>Assertion.addChain(name, [onCall])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Add chaining getter to Assertion like .a, .which etc</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>name of getter</p>
+                </li>
+                
+                <li>
+                    <code>[onCall]</code> <em>(function)</em>: <p>optional function to call</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alias"></a>
+            <h3><a id=""></a><code>Assertion.alias(from, to)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Create alias for some <code>Assertion</code> property</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>from</code> <em>(String)</em>: <p>Name of to map</p>
+                </li>
+                
+                <li>
+                    <code>to</code> <em>(String)</em>: <p>Name of alias</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">Assertion.alias(<span class="hljs-string">'true'</span>, <span class="hljs-string">'True'</span>)</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="promisedassertion"></a>
+            <h3><a id=""></a><code>PromisedAssertion(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assertion used to delegate calls of Assertion methods inside of Promise.<br />It has almost all methods of Assertion.prototype</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(Promise)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
         
         
         <div class="doc-block">
@@ -1108,7 +1268,7 @@ should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<s
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Base method for assertions. Before calling this method need to fill Assertion#params object. This method usually called from other assertion methods.<br /><code>Assertion#params</code> can contain such properties:</p><ul>
+            <div class="description-section" ><p>Base method for assertions.</p><p>Before calling this method need to fill Assertion#params object. This method usually called from other assertion methods.<br /><code>Assertion#params</code> can contain such properties:</p><ul>
 <li><code>operator</code> - required string containing description of this assertion</li>
 <li><code>obj</code> - optional replacement for this.obj, it usefull if you prepare more clear object then given</li>
 <li><code>message</code> - if this property filled with string any others will be ignored and this one used as assertion message</li>
@@ -1203,91 +1363,6 @@ a.fail();
             
             
             
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-add"></a>
-            <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Way to extend Assertion function. It uses some logic<br />to define only positive assertions and itself rule with negative assertion.</p><p>All actions happen in subcontext and this method take care about negation.<br />Potentially we can add some more modifiers that does not depends from state of assertion.</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>name</code> <em>(String)</em>: <p>Name of assertion. It will be used for defining method or getter on Assertion.prototype</p>
-                </li>
-                
-                <li>
-                    <code>func</code> <em>(Function)</em>: <p>Function that will be called on executing assertion</p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-     <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> };
-
-     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number();
-     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'path'</span>);
-});</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-alias"></a>
-            <h3><a id=""></a><code>Assertion.alias(from, to)</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Create alias for some <code>Assertion</code> property</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>from</code> <em>(String)</em>: <p>Name of to map</p>
-                </li>
-                
-                <li>
-                    <code>to</code> <em>(String)</em>: <p>Name of alias</p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">Assertion.alias(<span class="hljs-string">'true'</span>, <span class="hljs-string">'True'</span>);</code></pre>
             
             <hr/>
         </div>
@@ -3072,9 +3147,6 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
 
             
             
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
-            
             
             
 
@@ -3084,9 +3156,9 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">promise.should.be.Promise();
-(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise();
-(<span class="hljs-number">10</span>).should.not.be.a.Promise();</code></pre>
+            <pre><code class="hljs javascript">promise.should.be.Promise()
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise()
+(<span class="hljs-number">10</span>).should.not.be.a.Promise()</code></pre>
             
             <hr/>
         </div>
@@ -3100,12 +3172,9 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert given object is promise and wrap it in PromisedAssertion, which has all properties of should.Assertion. That means you can chain as with usual Assertion.</p></div>
+            <div class="description-section" ><p>Assert given object is promise and wrap it in PromisedAssertion, which has all properties of Assertion. That means you can chain as with usual Assertion.</p></div>
 
             
-            
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
             
             
             
@@ -3118,13 +3187,13 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             <h4>Returns</h4>
             <div class="returns-section">
-            <p> <em>(PromisedAssertion)</em></p>: <p>Like should.Assertion, but .then this.obj in Assertion</p>
+            <p> <em>(PromisedAssertion)</em></p>: <p>Like Assertion, but .then this.obj in Assertion</p>
             </div>
             
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.eventually.equal(<span class="hljs-number">10</span>);</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.eventually.equal(<span class="hljs-number">10</span>)</code></pre>
             
             <hr/>
         </div>
@@ -3142,9 +3211,6 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
 
             
             
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
-            
             
             
 
@@ -3159,7 +3225,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled()</code></pre>
             
             <hr/>
         </div>
@@ -3177,9 +3243,6 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
 
             
             
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
-            
             
             
 
@@ -3194,7 +3257,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilledWith(<span class="hljs-number">10</span>);</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilledWith(<span class="hljs-number">10</span>)</code></pre>
             
             <hr/>
         </div>
@@ -3212,9 +3275,6 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
 
             
             
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
-            
             
             
 
@@ -3229,7 +3289,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected();</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected()</code></pre>
             
             <hr/>
         </div>
@@ -3247,9 +3307,6 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
 
             
             
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
-            
             
             
 
@@ -3266,46 +3323,14 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             <h4>Example</h4>
             <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">failedPromise</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
-    reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>));
+    reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>))
   })
 }
-failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>);
-failedPromise().should.be.rejectedWith(<span class="hljs-string">'boom'</span>);
-failedPromise().should.be.rejectedWith(<span class="hljs-regexp">/boom/</span>);
-failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>, { message: <span class="hljs-string">'boom'</span> });
-failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> });</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="promisedassertion-then"></a>
-            <h3><a id=""></a><code>PromisedAssertion#then()</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Make PromisedAssertion to look like promise. Delegate resolve and reject to given promise.</p></div>
-
-            
-            
-            <h4>Module</h4>
-            <div><code>npm i should-promised --save-dev</code></div>
-            
-            
-            
-
-            
-            
-            
-            <h4>Returns</h4>
-            <div class="returns-section">
-            <p> <em>(Promise)</em></p>
-            </div>
-            
-            
+failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>)
+failedPromise().should.be.rejectedWith(<span class="hljs-string">'boom'</span>)
+failedPromise().should.be.rejectedWith(<span class="hljs-regexp">/boom/</span>)
+failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>, { message: <span class="hljs-string">'boom'</span> })
+failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> })</code></pre>
             
             <hr/>
         </div>
