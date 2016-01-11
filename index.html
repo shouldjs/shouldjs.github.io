@@ -675,6 +675,11 @@
             
         
             
+            <li><a href="#assertion-date"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Date</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#assertion-error"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Error</code></b></a></li>
             
             
@@ -1091,7 +1096,7 @@ a.should.be.eql(b);
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Allow to extend given prototype with should property using given name. This getter will <strong>unwrap</strong> all standard wrappers like <code>Number</code>, <code>Boolean</code>, <code>String</code>.<br />Using <code>should(obj)</code> is the equivalent of using <code>obj.should</code> with known issues (like nulls and method calls etc).</p></div>
+            <div class="description-section" ><p>Allow to extend given prototype with should property using given name. This getter will <strong>unwrap</strong> all standard wrappers like <code>Number</code>, <code>Boolean</code>, <code>String</code>.<br />Using <code>should(obj)</code> is the equivalent of using <code>obj.should</code> with known issues (like nulls and method calls etc).</p><p>To add new assertions, need to use Assertion.add method.</p></div>
 
             
             
@@ -3172,7 +3177,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert given object is promise and wrap it in PromisedAssertion, which has all properties of Assertion. That means you can chain as with usual Assertion.</p></div>
+            <div class="description-section" ><p>Assert given object is promise and wrap it in PromisedAssertion, which has all properties of Assertion.<br />That means you can chain as with usual Assertion.<br />Result of assertion is still .thenable and should be handled accordingly.</p></div>
 
             
             
@@ -3193,7 +3198,14 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.eventually.equal(<span class="hljs-number">10</span>)</code></pre>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); }))
+   .should.be.eventually.equal(<span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; resolve(<span class="hljs-number">10</span>))
+     .should.be.finally.equal(<span class="hljs-number">10</span>);
+});</code></pre>
             
             <hr/>
         </div>
@@ -3207,7 +3219,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert given promise will be fulfilled</p></div>
+            <div class="description-section" ><p>Assert given promise will be fulfilled. Result of assertion is still .thenable and should be handled accordingly.</p></div>
 
             
             
@@ -3225,7 +3237,14 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled()</code></pre>
+            <pre><code class="hljs javascript"><span class="hljs-comment">// don't forget to handle async nature</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; resolve(<span class="hljs-number">10</span>))
+     .should.be.fulfilled();
+});</code></pre>
             
             <hr/>
         </div>
@@ -3239,7 +3258,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert given promise will be fulfilled with some expected value.</p></div>
+            <div class="description-section" ><p>Assert given promise will be fulfilled with some expected value (value compared using .eql).<br />Result of assertion is still .thenable and should be handled accordingly.</p></div>
 
             
             
@@ -3257,7 +3276,15 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilledWith(<span class="hljs-number">10</span>)</code></pre>
+            <pre><code class="hljs javascript"><span class="hljs-comment">// don't forget to handle async nature</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); }))
+   .should.be.fulfilledWith(<span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; resolve(<span class="hljs-number">10</span>))
+      .should.be.fulfilledWith(<span class="hljs-number">10</span>);
+});</code></pre>
             
             <hr/>
         </div>
@@ -3271,7 +3298,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert given promise will be rejected</p></div>
+            <div class="description-section" ><p>Assert given promise will be rejected. Result of assertion is still .thenable and should be handled accordingly.</p></div>
 
             
             
@@ -3289,7 +3316,15 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.not.be.rejected()</code></pre>
+            <pre><code class="hljs javascript"><span class="hljs-comment">// don't forget to handle async nature</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); }))
+   .should.not.be.rejected();
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>)))
+     .should.be.rejected();
+});</code></pre>
             
             <hr/>
         </div>
@@ -3303,7 +3338,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Assert given promise will be rejected with some sort of error. Arguments is the same for Assertion#throw</p></div>
+            <div class="description-section" ><p>Assert given promise will be rejected with some sort of error. Arguments is the same for Assertion#throw.<br />Result of assertion is still .thenable and should be handled accordingly.</p></div>
 
             
             
@@ -3326,11 +3361,16 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
     reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>))
   })
 }
-failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>)
-failedPromise().should.be.rejectedWith(<span class="hljs-string">'boom'</span>)
-failedPromise().should.be.rejectedWith(<span class="hljs-regexp">/boom/</span>)
-failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>, { message: <span class="hljs-string">'boom'</span> })
-failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> })</code></pre>
+failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>);
+failedPromise().should.be.rejectedWith(<span class="hljs-string">'boom'</span>);
+failedPromise().should.be.rejectedWith(<span class="hljs-regexp">/boom/</span>);
+failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>, { message: <span class="hljs-string">'boom'</span> });
+failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> });
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> });
+});</code></pre>
             
             <hr/>
         </div>
@@ -4608,6 +4648,30 @@ callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span cla
             </div>
 
             <div class="description-section" ><p>Assert given object is boolean</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-date"></a>
+            <h3><a id=""></a><code>Assertion#Date()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is a date</p></div>
 
             
             
