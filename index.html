@@ -756,7 +756,7 @@
         
         <div class="doc-block">
             <a id="assertion-add"></a>
-            <h3><a id=""></a><code>Assertion.add(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -801,7 +801,7 @@
         
         <div class="doc-block">
             <a id="assertion-addchain"></a>
-            <h3><a id=""></a><code>Assertion.addChain(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion.addChain(name, [onCall])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -838,7 +838,7 @@
         
         <div class="doc-block">
             <a id="assertion-alias"></a>
-            <h3><a id=""></a><code>Assertion.alias(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion.alias(from, to)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -878,7 +878,7 @@
         
         <div class="doc-block">
             <a id="promisedassertion"></a>
-            <h3><a id=""></a><code>PromisedAssertion(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>PromisedAssertion(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -911,7 +911,7 @@
         
         <div class="doc-block">
             <a id="getglobaltype"></a>
-            <h3><a id=""></a><code>getGlobalType(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>getGlobalType(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -944,7 +944,7 @@
         
         <div class="doc-block">
             <a id="should"></a>
-            <h3><a id=""></a><code>should(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -986,7 +986,7 @@ should(<span class="hljs-string">'abc'</span>).be.a.String();</code></pre>
         
         <div class="doc-block">
             <a id="should-assertion"></a>
-            <h3><a id=""></a><code>should.Assertion(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.Assertion(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1019,7 +1019,7 @@ should(<span class="hljs-string">'abc'</span>).be.a.String();</code></pre>
         
         <div class="doc-block">
             <a id="should-assertionerror"></a>
-            <h3><a id=""></a><code>should.AssertionError(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.AssertionError(options)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1091,7 +1091,7 @@ a.should.be.eql(b);
         
         <div class="doc-block">
             <a id="should-extend"></a>
-            <h3><a id=""></a><code>should.extend(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.extend([propertyName], [proto])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1141,7 +1141,7 @@ should.not.exist(<span class="hljs-built_in">Object</span>.prototype.must);</cod
         
         <div class="doc-block">
             <a id="should-noconflict"></a>
-            <h3><a id=""></a><code>should.noConflict(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.noConflict([desc])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1190,7 +1190,7 @@ should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<s
         
         <div class="doc-block">
             <a id="should-use"></a>
-            <h3><a id=""></a><code>should.use(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.use(f)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1268,7 +1268,7 @@ should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<s
         
         <div class="doc-block">
             <a id="assertion-assert"></a>
-            <h3><a id=""></a><code>Assertion#assert(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#assert(expr)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1382,7 +1382,7 @@ a.fail();
         
         <div class="doc-block">
             <a id="should-deepequal"></a>
-            <h3><a id=""></a><code>should.deepEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.deepEqual(actual, expected, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1423,7 +1423,7 @@ a.fail();
         
         <div class="doc-block">
             <a id="should-doesnotthrow"></a>
-            <h3><a id=""></a><code>should.doesNotThrow(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.doesNotThrow(block, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1460,7 +1460,7 @@ a.fail();
         
         <div class="doc-block">
             <a id="should-equal"></a>
-            <h3><a id=""></a><code>should.equal(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.equal(actual, expected, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1545,7 +1545,7 @@ should.exist(<span class="hljs-keyword">new</span> <span class="hljs-built_in">D
         
         <div class="doc-block">
             <a id="should-fail"></a>
-            <h3><a id=""></a><code>should.fail(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.fail(actual, expected, message, operator)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1590,7 +1590,7 @@ should.exist(<span class="hljs-keyword">new</span> <span class="hljs-built_in">D
         
         <div class="doc-block">
             <a id="should-iferror"></a>
-            <h3><a id=""></a><code>should.ifError(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.ifError(err)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1667,7 +1667,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="should-notdeepequal"></a>
-            <h3><a id=""></a><code>should.notDeepEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.notDeepEqual(actual, expected, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1708,7 +1708,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="should-notequal"></a>
-            <h3><a id=""></a><code>should.notEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.notEqual(actual, expected, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1749,7 +1749,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="should-notstrictequal"></a>
-            <h3><a id=""></a><code>should.notStrictEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.notStrictEqual(actual, expected, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1790,7 +1790,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="should-ok"></a>
-            <h3><a id=""></a><code>should.ok(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.ok(value, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1827,7 +1827,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="should-strictequal"></a>
-            <h3><a id=""></a><code>should.strictEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.strictEqual(actual, expected, [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1868,7 +1868,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="should-throws"></a>
-            <h3><a id=""></a><code>should.throws(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>should.throws(block, [error], [message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1915,7 +1915,7 @@ should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number
         
         <div class="doc-block">
             <a id="assertion-false"></a>
-            <h3><a id=""></a><code>Assertion#false(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#false([message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1988,7 +1988,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
         
         <div class="doc-block">
             <a id="assertion-true"></a>
-            <h3><a id=""></a><code>Assertion#true(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#true([message])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2069,7 +2069,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
         
         <div class="doc-block">
             <a id="assertion-containdeep"></a>
-            <h3><a id=""></a><code>Assertion#containDeep(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#containDeep(other)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2106,7 +2106,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
         
         <div class="doc-block">
             <a id="assertion-containdeepordered"></a>
-            <h3><a id=""></a><code>Assertion#containDeepOrdered(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#containDeepOrdered(other)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2147,7 +2147,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
         
         <div class="doc-block">
             <a id="assertion-containeql"></a>
-            <h3><a id=""></a><code>Assertion#containEql(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#containEql(other)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2199,7 +2199,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
         
         <div class="doc-block">
             <a id="assertion-eql"></a>
-            <h3><a id=""></a><code>Assertion#eql(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#eql(val, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2249,7 +2249,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
         
         <div class="doc-block">
             <a id="assertion-equal"></a>
-            <h3><a id=""></a><code>Assertion#equal(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#equal(val, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2295,7 +2295,7 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
         
         <div class="doc-block">
             <a id="assertion-equaloneof"></a>
-            <h3><a id=""></a><code>Assertion#equalOneOf(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#equalOneOf(vals)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2332,7 +2332,7 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
         
         <div class="doc-block">
             <a id="assertion-oneof"></a>
-            <h3><a id=""></a><code>Assertion#oneOf(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#oneOf(vals)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2375,7 +2375,7 @@ should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-lite
         
         <div class="doc-block">
             <a id="assertion-throw"></a>
-            <h3><a id=""></a><code>Assertion#throw(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#throw([message], [properties])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2513,7 +2513,7 @@ error.a = <span class="hljs-number">10</span>;
         
         <div class="doc-block">
             <a id="assertion-header"></a>
-            <h3><a id=""></a><code>Assertion#header(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#header(field, [val])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2616,7 +2616,7 @@ error.a = <span class="hljs-number">10</span>;
         
         <div class="doc-block">
             <a id="assertion-status"></a>
-            <h3><a id=""></a><code>Assertion#status(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#status(code)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2661,7 +2661,7 @@ error.a = <span class="hljs-number">10</span>;
         
         <div class="doc-block">
             <a id="assertion-match"></a>
-            <h3><a id=""></a><code>Assertion#match(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#match(other, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2735,7 +2735,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-matchany"></a>
-            <h3><a id=""></a><code>Assertion#matchAny(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#matchAny(other, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2783,7 +2783,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-matcheach"></a>
-            <h3><a id=""></a><code>Assertion#matchEach(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#matchEach(other, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2893,7 +2893,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-above"></a>
-            <h3><a id=""></a><code>Assertion#above(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#above(n, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2936,7 +2936,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-aboveorequal"></a>
-            <h3><a id=""></a><code>Assertion#aboveOrEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#aboveOrEqual(n, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -2980,7 +2980,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-approximately"></a>
-            <h3><a id=""></a><code>Assertion#approximately(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#approximately(value, delta, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3024,7 +3024,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-below"></a>
-            <h3><a id=""></a><code>Assertion#below(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#below(n, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3067,7 +3067,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-beloworequal"></a>
-            <h3><a id=""></a><code>Assertion#belowOrEqual(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#belowOrEqual(n, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3111,7 +3111,7 @@ myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regex
         
         <div class="doc-block">
             <a id="assertion-within"></a>
-            <h3><a id=""></a><code>Assertion#within(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#within(start, finish, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3432,7 +3432,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-enumerable"></a>
-            <h3><a id=""></a><code>Assertion#enumerable(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#enumerable(name, [val])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3472,7 +3472,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-enumerables"></a>
-            <h3><a id=""></a><code>Assertion#enumerables(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#enumerables(names)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3508,7 +3508,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-keys"></a>
-            <h3><a id=""></a><code>Assertion#keys(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#keys([keys])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3550,7 +3550,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-length"></a>
-            <h3><a id=""></a><code>Assertion#length(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#length(n, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3593,7 +3593,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-ownproperty"></a>
-            <h3><a id=""></a><code>Assertion#ownProperty(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#ownProperty(name, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3636,7 +3636,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-properties"></a>
-            <h3><a id=""></a><code>Assertion#properties(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#properties(names)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3674,7 +3674,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-property"></a>
-            <h3><a id=""></a><code>Assertion#property(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#property(name, [val])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3714,7 +3714,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-propertybypath"></a>
-            <h3><a id=""></a><code>Assertion#propertyByPath(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#propertyByPath(properties)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3750,7 +3750,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-propertywithdescriptor"></a>
-            <h3><a id=""></a><code>Assertion#propertyWithDescriptor(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#propertyWithDescriptor(name, desc)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3796,7 +3796,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-endwith"></a>
-            <h3><a id=""></a><code>Assertion#endWith(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#endWith(str, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3836,7 +3836,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-startwith"></a>
-            <h3><a id=""></a><code>Assertion#startWith(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#startWith(str, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3882,7 +3882,7 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         <div class="doc-block">
             <a id="assertion-alwayscalledon"></a>
-            <h3><a id=""></a><code>Assertion#alwaysCalledOn(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#alwaysCalledOn(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3927,7 +3927,7 @@ callback.should.be.alwaysCalledOn(obj);</code></pre>
         
         <div class="doc-block">
             <a id="assertion-alwayscalledwith"></a>
-            <h3><a id=""></a><code>Assertion#alwaysCalledWith(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWith(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -3973,7 +3973,7 @@ callback.should.be.alwaysCalledWith(<span class="hljs-number">1</span>, <span cl
         
         <div class="doc-block">
             <a id="assertion-alwayscalledwithexactly"></a>
-            <h3><a id=""></a><code>Assertion#alwaysCalledWithExactly(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithExactly(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4012,7 +4012,7 @@ callback.should.be.alwaysCalledWith(<span class="hljs-number">1</span>, <span cl
         
         <div class="doc-block">
             <a id="assertion-alwayscalledwithmatch"></a>
-            <h3><a id=""></a><code>Assertion#alwaysCalledWithMatch(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithMatch(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4086,7 +4086,7 @@ Class.should.be.alwaysCalledWithNew;</code></pre>
         
         <div class="doc-block">
             <a id="assertion-alwaysthrew"></a>
-            <h3><a id=""></a><code>Assertion#alwaysThrew(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#alwaysThrew(ex)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4125,7 +4125,7 @@ Class.should.be.alwaysCalledWithNew;</code></pre>
         
         <div class="doc-block">
             <a id="assertion-callcount"></a>
-            <h3><a id=""></a><code>Assertion#callCount(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#callCount(count)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4204,7 +4204,7 @@ callback.should.be.called();</code></pre>
         
         <div class="doc-block">
             <a id="assertion-calledon"></a>
-            <h3><a id=""></a><code>Assertion#calledOn(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#calledOn(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4348,7 +4348,7 @@ callback.should.be.calledTwice();</code></pre>
         
         <div class="doc-block">
             <a id="assertion-calledwith"></a>
-            <h3><a id=""></a><code>Assertion#calledWith(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#calledWith(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4394,7 +4394,7 @@ callback.should.be.calledWith(<span class="hljs-number">1</span>, <span class="h
         
         <div class="doc-block">
             <a id="assertion-calledwithexactly"></a>
-            <h3><a id=""></a><code>Assertion#calledWithExactly(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#calledWithExactly(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4433,7 +4433,7 @@ callback.should.be.calledWith(<span class="hljs-number">1</span>, <span class="h
         
         <div class="doc-block">
             <a id="assertion-calledwithmatch"></a>
-            <h3><a id=""></a><code>Assertion#calledWithMatch(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#calledWithMatch(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4506,7 +4506,7 @@ Class.should.be.calledWithNew;</code></pre>
         
         <div class="doc-block">
             <a id="assertion-nevercalledwith"></a>
-            <h3><a id=""></a><code>Assertion#neverCalledWith(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#neverCalledWith(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4552,7 +4552,7 @@ callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span cla
         
         <div class="doc-block">
             <a id="assertion-nevercalledwithmatch"></a>
-            <h3><a id=""></a><code>Assertion#neverCalledWithMatch(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#neverCalledWithMatch(args)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4591,7 +4591,7 @@ callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span cla
         
         <div class="doc-block">
             <a id="assertion-threw"></a>
-            <h3><a id=""></a><code>Assertion#threw(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#threw(ex)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4882,7 +4882,7 @@ callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span cla
         
         <div class="doc-block">
             <a id="assertion-instanceof"></a>
-            <h3><a id=""></a><code>Assertion#instanceof(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#instanceof(constructor, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -4949,7 +4949,7 @@ callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span cla
         
         <div class="doc-block">
             <a id="assertion-type"></a>
-            <h3><a id=""></a><code>Assertion#type(, , , , , , , , )</code></h3>
+            <h3><a id=""></a><code>Assertion#type(type, [description])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
