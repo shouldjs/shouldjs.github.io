@@ -1,0 +1,5077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Should.js API Documentation</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<h1 class="header"><a href="/">Should.js</a></h1>
+
+<div class="toc-container">
+    <a id="toc"></a>
+    
+    <div>
+        <h2><code>global</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-add"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">add</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-addchain"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">addChain</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alias"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">alias</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#promisedassertion"><b><code class="name">PromisedAssertion</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should"><b><code class="name">should</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-assertion"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">Assertion</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-assertionerror"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">AssertionError</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-config"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">config</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-extend"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">extend</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-noconflict"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">noConflict</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-use"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">use</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-any"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">any</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-assert"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">assert</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-fail"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">fail</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-not"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">not</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion assert</code></h2>
+        <ul>
+        
+            
+            <li><a href="#should-deepequal"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">deepEqual</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-doesnotthrow"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">doesNotThrow</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-equal"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">equal</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-exist"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">exist</code></b></a></li>
+            
+            
+            <li><a href="#should-exist" class="alias"><code>should.exists</code> → <code>should.exist</code></a></li>
+            
+        
+            
+            <li><a href="#should-fail"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">fail</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-iferror"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">ifError</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-not-exist"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">not.exist</code></b></a></li>
+            
+            
+            <li><a href="#should-not-exist" class="alias"><code>should.not.exists</code> → <code>should.not.exist</code></a></li>
+            
+        
+            
+            <li><a href="#should-notdeepequal"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">notDeepEqual</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-notequal"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">notEqual</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-notstrictequal"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">notStrictEqual</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-ok"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">ok</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-strictequal"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">strictEqual</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-throws"><code class='parent'>should</code><code class='mtype'>.</code><b><code class="name">throws</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion bool</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-false"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">false</code></b></a></li>
+            
+            
+            <li><a href="#assertion-false" class="alias"><code>Assertion#False</code> → <code>Assertion#false</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-ok"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">ok</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-true"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">true</code></b></a></li>
+            
+            
+            <li><a href="#assertion-true" class="alias"><code>Assertion#True</code> → <code>Assertion#true</code></a></li>
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion chaining</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-be"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">be</code></b></a></li>
+            
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#an</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#of</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#a</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#and</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#have</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#has</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#with</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#is</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#which</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#the</code> → <code>Assertion#be</code></a></li>
+            
+            <li><a href="#assertion-be" class="alias"><code>Assertion#it</code> → <code>Assertion#be</code></a></li>
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion contain</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-containdeep"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">containDeep</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-containdeepordered"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">containDeepOrdered</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-containeql"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">containEql</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion equality</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-eql"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">eql</code></b></a></li>
+            
+            
+            <li><a href="#assertion-eql" class="alias"><code>Assertion#deepEqual</code> → <code>Assertion#eql</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-equal"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">equal</code></b></a></li>
+            
+            
+            <li><a href="#assertion-equal" class="alias"><code>Assertion#exactly</code> → <code>Assertion#equal</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-equaloneof"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">equalOneOf</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-oneof"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">oneOf</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion errors</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-throw"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">throw</code></b></a></li>
+            
+            
+            <li><a href="#assertion-throw" class="alias"><code>Assertion#throwError</code> → <code>Assertion#throw</code></a></li>
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion es6</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-generator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">generator</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-iterable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterable</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-iterator"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">iterator</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion http</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-header"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">header</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-html"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">html</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-json"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">json</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-status"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">status</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion matching</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-match"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">match</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-matchany"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">matchAny</code></b></a></li>
+            
+            
+            <li><a href="#assertion-matchany" class="alias"><code>Assertion#matchSome</code> → <code>Assertion#matchAny</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-matcheach"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">matchEach</code></b></a></li>
+            
+            
+            <li><a href="#assertion-matcheach" class="alias"><code>Assertion#matchEvery</code> → <code>Assertion#matchEach</code></a></li>
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion numbers</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-infinity"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Infinity</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-nan"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">NaN</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-above"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">above</code></b></a></li>
+            
+            
+            <li><a href="#assertion-above" class="alias"><code>Assertion#greaterThan</code> → <code>Assertion#above</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-aboveorequal"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">aboveOrEqual</code></b></a></li>
+            
+            
+            <li><a href="#assertion-aboveorequal" class="alias"><code>Assertion#greaterThanOrEqual</code> → <code>Assertion#aboveOrEqual</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-approximately"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">approximately</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-below"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">below</code></b></a></li>
+            
+            
+            <li><a href="#assertion-below" class="alias"><code>Assertion#lessThan</code> → <code>Assertion#below</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-beloworequal"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">belowOrEqual</code></b></a></li>
+            
+            
+            <li><a href="#assertion-beloworequal" class="alias"><code>Assertion#lessThanOrEqual</code> → <code>Assertion#belowOrEqual</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-within"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">within</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion promises</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-promise"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Promise</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-finally"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">finally</code></b></a></li>
+            
+            
+            <li><a href="#assertion-finally" class="alias"><code>Assertion#eventually</code> → <code>Assertion#finally</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-fulfilled"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">fulfilled</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-fulfilledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">fulfilledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-rejected"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">rejected</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-rejectedwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">rejectedWith</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion property</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-empty"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">empty</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-enumerable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">enumerable</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-enumerables"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">enumerables</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-keys"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">keys</code></b></a></li>
+            
+            
+            <li><a href="#assertion-keys" class="alias"><code>Assertion#key</code> → <code>Assertion#keys</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-length"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">length</code></b></a></li>
+            
+            
+            <li><a href="#assertion-length" class="alias"><code>Assertion#lengthOf</code> → <code>Assertion#length</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-ownproperty"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">ownProperty</code></b></a></li>
+            
+            
+            <li><a href="#assertion-ownproperty" class="alias"><code>Assertion#hasOwnProperty</code> → <code>Assertion#ownProperty</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-properties"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">properties</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-property"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">property</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-propertybypath"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">propertyByPath</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-propertywithdescriptor"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">propertyWithDescriptor</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-size"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">size</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-value"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">value</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion strings</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-endwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">endWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-startwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">startWith</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion stubs</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-alwayscalledon"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledOn</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwithexactly"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWithExactly</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWithMatch</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwayscalledwithnew"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysCalledWithNew</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-alwaysthrew"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">alwaysThrew</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-callcount"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">callCount</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-called"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">called</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledon"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledOn</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledonce"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledOnce</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledthrice"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledThrice</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledtwice"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledTwice</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwithexactly"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWithExactly</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWithMatch</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-calledwithnew"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">calledWithNew</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-nevercalledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">neverCalledWith</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-nevercalledwithmatch"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">neverCalledWithMatch</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-threw"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">threw</code></b></a></li>
+            
+            
+        
+        </ul>
+    </div>
+    
+    <div>
+        <h2><code>assertion types</code></h2>
+        <ul>
+        
+            
+            <li><a href="#assertion-array"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Array</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-boolean"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Boolean</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-date"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Date</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-error"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Error</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-function"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Function</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-number"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Number</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-object"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">Object</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-string"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">String</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-arguments"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">arguments</code></b></a></li>
+            
+            
+            <li><a href="#assertion-arguments" class="alias"><code>Assertion#Arguments</code> → <code>Assertion#arguments</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-class"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">class</code></b></a></li>
+            
+            
+            <li><a href="#assertion-class" class="alias"><code>Assertion#Class</code> → <code>Assertion#class</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-instanceof"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">instanceof</code></b></a></li>
+            
+            
+            <li><a href="#assertion-instanceof" class="alias"><code>Assertion#instanceOf</code> → <code>Assertion#instanceof</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-null"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">null</code></b></a></li>
+            
+            
+            <li><a href="#assertion-null" class="alias"><code>Assertion#Null</code> → <code>Assertion#null</code></a></li>
+            
+        
+            
+            <li><a href="#assertion-type"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">type</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-undefined"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">undefined</code></b></a></li>
+            
+            
+            <li><a href="#assertion-undefined" class="alias"><code>Assertion#Undefined</code> → <code>Assertion#undefined</code></a></li>
+            
+        
+        </ul>
+    </div>
+    
+</div>
+<div class="doc-container">
+    
+    <div>
+        <h2><code>“global” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-add"></a>
+            <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Way to extend Assertion function. It uses some logic<br />to define only positive assertions and itself rule with negative assertion.</p><p>All actions happen in subcontext and this method take care about negation.<br />Potentially we can add some more modifiers that does not depends from state of assertion.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(String)</em>: <p>Name of assertion. It will be used for defining method or getter on Assertion.prototype</p>
+                </li>
+                
+                <li>
+                    <code>func</code> <em>(Function)</em>: <p>Function that will be called on executing assertion</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> }
+
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number()
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'path'</span>)
+})</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-addchain"></a>
+            <h3><a id=""></a><code>Assertion.addChain(name, [onCall])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Add chaining getter to Assertion like .a, .which etc</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>name of getter</p>
+                </li>
+                
+                <li>
+                    <code>[onCall]</code> <em>(function)</em>: <p>optional function to call</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alias"></a>
+            <h3><a id=""></a><code>Assertion.alias(from, to)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Create alias for some <code>Assertion</code> property</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>from</code> <em>(String)</em>: <p>Name of to map</p>
+                </li>
+                
+                <li>
+                    <code>to</code> <em>(String)</em>: <p>Name of alias</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">Assertion.alias(<span class="hljs-string">'true'</span>, <span class="hljs-string">'True'</span>)</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="promisedassertion"></a>
+            <h3><a id=""></a><code>PromisedAssertion(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assertion used to delegate calls of Assertion methods inside of Promise.<br />It has almost all methods of Assertion.prototype</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(Promise)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should"></a>
+            <h3><a id=""></a><code>should(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Our function should</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>: <p>Object to assert</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(should.Assertion)</em></p>: <p>Returns new Assertion for beginning assertion chain</p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> should = <span class="hljs-built_in">require</span>(<span class="hljs-string">'should'</span>);
+should(<span class="hljs-string">'abc'</span>).be.a.String();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-assertion"></a>
+            <h3><a id=""></a><code>should.Assertion(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>should Assertion</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>: <p>Given object for assertion</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-assertionerror"></a>
+            <h3><a id=""></a><code>should.AssertionError(options)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>should AssertionError</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>options</code> <em>(Object)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-config"></a>
+            <h3><a id=""></a><code>should.config</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Object with configuration.<br />It contains such properties:</p><ul>
+<li><code>checkProtoEql</code> boolean - Affect if <code>.eql</code> will check objects prototypes</li>
+<li><code>plusZeroAndMinusZeroEqual</code> boolean - Affect if <code>.eql</code> will treat +0 and -0 as equal<br />Also it can contain options for should-format.</li>
+</ul>
+</div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = { a: <span class="hljs-number">10</span> }, b = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+b.a = <span class="hljs-number">10</span>;
+
+a.should.be.eql(b);
+<span class="hljs-comment">//not throws</span>
+
+should.config.checkProtoEql = <span class="hljs-literal">true</span>;
+a.should.be.eql(b);
+<span class="hljs-comment">//throws AssertionError: expected { a: 10 } to equal { a: 10 } (because A and B have different prototypes)</span></code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-extend"></a>
+            <h3><a id=""></a><code>should.extend([propertyName], [proto])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Allow to extend given prototype with should property using given name. This getter will <strong>unwrap</strong> all standard wrappers like <code>Number</code>, <code>Boolean</code>, <code>String</code>.<br />Using <code>should(obj)</code> is the equivalent of using <code>obj.should</code> with known issues (like nulls and method calls etc).</p><p>To add new assertions, need to use Assertion.add method.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>[propertyName]</code> <em>(string)</em>: <p>Name of property to add. Default is <code>&#39;should&#39;</code>.</p>
+                </li>
+                
+                <li>
+                    <code>[proto]</code> <em>(Object)</em>: <p>Prototype to extend with. Default is <code>Object.prototype</code>.</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>({ name: string, descriptor: Object, proto: Object })</em></p>: <p>Descriptor enough to return all back</p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> prev = should.extend(<span class="hljs-string">'must'</span>, <span class="hljs-built_in">Object</span>.prototype);
+
+<span class="hljs-string">'abc'</span>.must.startWith(<span class="hljs-string">'a'</span>);
+
+<span class="hljs-keyword">var</span> should = should.noConflict(prev);
+should.not.exist(<span class="hljs-built_in">Object</span>.prototype.must);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-noconflict"></a>
+            <h3><a id=""></a><code>should.noConflict([desc])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Delete previous extension. If <code>desc</code> missing it will remove default extension.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>[desc]</code> <em>({ name: string, descriptor: Object, proto: Object })</em>: <p>Returned from <code>should.extend</code> object</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Function)</em></p>: <p>Returns should function</p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> should = <span class="hljs-built_in">require</span>(<span class="hljs-string">'should'</span>).noConflict();
+
+should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<span class="hljs-string">'should'</span>);
+
+<span class="hljs-keyword">var</span> prev = should.extend(<span class="hljs-string">'must'</span>, <span class="hljs-built_in">Object</span>.prototype);
+<span class="hljs-string">'abc'</span>.must.startWith(<span class="hljs-string">'a'</span>);
+should.noConflict(prev);
+
+should(<span class="hljs-built_in">Object</span>.prototype).not.have.property(<span class="hljs-string">'must'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-use"></a>
+            <h3><a id=""></a><code>should.use(f)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Simple utility function for a bit more easier should assertion extension</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>f</code> <em>(Function)</em>: <p>So called plugin function. It should accept 2 arguments: <code>should</code> function and <code>Assertion</code> constructor</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Function)</em></p>: <p>Returns <code>should</code> function</p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">should.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">should, Assertion</span>) </span>{
+  Assertion.add(<span class="hljs-string">'asset'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">this</span>.params = { operator: <span class="hljs-string">'to be asset'</span> };
+
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'id'</span>).which.is.a.Number();
+     <span class="hljs-keyword">this</span>.obj.should.have.property(<span class="hljs-string">'path'</span>);
+ })
+})</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-any"></a>
+            <h3><a id=""></a><code>Assertion#any</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Any modifier - it affect on execution of sequenced assertion to do not <code>check all</code>, but <code>check any of</code>.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-assert"></a>
+            <h3><a id=""></a><code>Assertion#assert(expr)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Base method for assertions.</p><p>Before calling this method need to fill Assertion#params object. This method usually called from other assertion methods.<br /><code>Assertion#params</code> can contain such properties:</p><ul>
+<li><code>operator</code> - required string containing description of this assertion</li>
+<li><code>obj</code> - optional replacement for this.obj, it usefull if you prepare more clear object then given</li>
+<li><code>message</code> - if this property filled with string any others will be ignored and this one used as assertion message</li>
+<li><code>expected</code> - any object used when you need to assert relation between given object and expected. Like given == expected (== is a relation)</li>
+<li><code>details</code> - additional string with details to generated message</li>
+</ul>
+</div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>expr</code> <em>(*)</em>: <p>Any expression that will be used as a condition for asserting.</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> should.Assertion(<span class="hljs-number">42</span>);
+
+a.params = {
+ operator: <span class="hljs-string">'to be magic number'</span>,
+}
+
+a.assert(<span class="hljs-literal">false</span>);
+<span class="hljs-comment">//throws AssertionError: expected 42 to be magic number</span></code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-fail"></a>
+            <h3><a id=""></a><code>Assertion#fail()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Shortcut for <code>Assertion#assert(false)</code>.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> should.Assertion(<span class="hljs-number">42</span>);
+
+a.params = {
+ operator: <span class="hljs-string">'to be magic number'</span>,
+}
+
+a.fail();
+<span class="hljs-comment">//throws AssertionError: expected 42 to be magic number</span></code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-not"></a>
+            <h3><a id=""></a><code>Assertion#not</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Negation modifier. Current assertion chain become negated. Each call invert negation on current assertion.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion assert” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="should-deepequal"></a>
+            <h3><a id=""></a><code>should.deepEqual(actual, expected, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_deepequal_actual_expected_message"><code>assert.deepEqual</code></a>.<br />But uses should.js .eql implementation instead of Node.js own deepEqual.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-doesnotthrow"></a>
+            <h3><a id=""></a><code>should.doesNotThrow(block, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_doesnotthrow_block_message"><code>assert.doesNotThrow</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>block</code> <em>(Function)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(String)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-equal"></a>
+            <h3><a id=""></a><code>should.equal(actual, expected, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_equal_actual_expected_message"><code>assert.equal</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-exist"></a>
+            <h3><a id=""></a><code>should.exist</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert <em>obj</em> exists, with optional message.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>should.exists</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[msg]</code> <em>(String)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">should.exist(<span class="hljs-number">1</span>);
+should.exist(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>());</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-fail"></a>
+            <h3><a id=""></a><code>should.fail(actual, expected, message, operator)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_fail_actual_expected_message_operator"><code>assert.fail</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>: <p>Actual object</p>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>: <p>Expected object</p>
+                </li>
+                
+                <li>
+                    <code>message</code> <em>(string)</em>: <p>Message for assertion</p>
+                </li>
+                
+                <li>
+                    <code>operator</code> <em>(string)</em>: <p>Operator text</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-iferror"></a>
+            <h3><a id=""></a><code>should.ifError(err)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_iferror_value"><code>assert.ifError</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>err</code> <em>(Error)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-not-exist"></a>
+            <h3><a id=""></a><code>should.not.exist</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts <em>obj</em> does not exist, with optional message.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>should.not.exists</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[msg]</code> <em>(String)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">should.not.exist(<span class="hljs-literal">null</span>);
+should.not.exist(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-notdeepequal"></a>
+            <h3><a id=""></a><code>should.notDeepEqual(actual, expected, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_notdeepequal_actual_expected_message"><code>assert.notDeepEqual</code></a>.<br />But uses should.js .eql implementation instead of Node.js own deepEqual.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-notequal"></a>
+            <h3><a id=""></a><code>should.notEqual(actual, expected, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_notequal_actual_expected_message"><code>assert.notEqual</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-notstrictequal"></a>
+            <h3><a id=""></a><code>should.notStrictEqual(actual, expected, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_notstrictequal_actual_expected_message"><code>assert.notStrictEqual</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-ok"></a>
+            <h3><a id=""></a><code>should.ok(value, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_value_message_assert_ok_value_message"><code>assert.ok</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>value</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-strictequal"></a>
+            <h3><a id=""></a><code>should.strictEqual(actual, expected, [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_strictequal_actual_expected_message"><code>assert.strictEqual</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>actual</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>expected</code> <em>(*)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-throws"></a>
+            <h3><a id=""></a><code>should.throws(block, [error], [message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Node.js standard <a href="http://nodejs.org/api/assert.html#assert_assert_throws_block_error_message"><code>assert.throws</code></a>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>block</code> <em>(Function)</em>
+                </li>
+                
+                <li>
+                    <code>[error]</code> <em>(Function)</em>
+                </li>
+                
+                <li>
+                    <code>[message]</code> <em>(String)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion bool” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-false"></a>
+            <h3><a id=""></a><code>Assertion#false([message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is exactly <code>false</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#False</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.not.be.false();
+<span class="hljs-literal">false</span>.should.be.false();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-ok"></a>
+            <h3><a id=""></a><code>Assertion#ok()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is truthy according javascript type conversions.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.be.ok();
+<span class="hljs-string">''</span>.should.not.be.ok();
+should(<span class="hljs-literal">null</span>).not.be.ok();
+should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>).not.be.ok();
+
+(<span class="hljs-number">10</span>).should.be.ok();
+(<span class="hljs-number">0</span>).should.not.be.ok();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-true"></a>
+            <h3><a id=""></a><code>Assertion#true([message])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is exactly <code>true</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#True</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>[message]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-literal">true</span>).should.be.true();
+<span class="hljs-literal">false</span>.should.not.be.true();
+
+({ a: <span class="hljs-number">10</span>}).should.not.be.true();</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion chaining” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-be"></a>
+            <h3><a id=""></a><code>Assertion#be</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Simple chaining. It actually do nothing.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#an, Assertion#of, Assertion#a, Assertion#and, Assertion#have, Assertion#has, Assertion#with, Assertion#is, Assertion#which, Assertion#the, Assertion#it</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion contain” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-containdeep"></a>
+            <h3><a id=""></a><code>Assertion#containDeep(other)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>The same like <code>Assertion#containDeepOrdered</code> but all checks on arrays without order.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Nested object</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].should.containDeep([<span class="hljs-number">2</span>, <span class="hljs-number">1</span>]);
+[ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]].should.containDeep([ <span class="hljs-number">1</span>, [ <span class="hljs-number">3</span>, <span class="hljs-number">1</span> ]]);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-containdeepordered"></a>
+            <h3><a id=""></a><code>Assertion#containDeepOrdered(other)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert that given object is contain equally structured object on the same depth level.<br />If given object is an array and <code>other</code> is an array it checks that the eql elements is going in the same sequence in given array (recursive)<br />If given object is an object it checks that the same keys contain deep equal values (recursive)<br />On other cases it try to check with <code>.eql</code></p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Nested object</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].should.containDeepOrdered([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);
+[ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]].should.containDeepOrdered([ <span class="hljs-number">1</span>, [ <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]]);
+
+({ a: <span class="hljs-number">10</span>, b: { c: <span class="hljs-number">10</span>, d: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] }}).should.containDeepOrdered({a: <span class="hljs-number">10</span>});
+({ a: <span class="hljs-number">10</span>, b: { c: <span class="hljs-number">10</span>, d: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] }}).should.containDeepOrdered({b: {c: <span class="hljs-number">10</span>}});
+({ a: <span class="hljs-number">10</span>, b: { c: <span class="hljs-number">10</span>, d: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] }}).should.containDeepOrdered({b: {d: [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>]}});</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-containeql"></a>
+            <h3><a id=""></a><code>Assertion#containEql(other)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert that given object contain something that equal to <code>other</code>. It uses <code>should-equal</code> for equality checks.<br />If given object is array it search that one of elements was equal to <code>other</code>.<br />If given object is string it checks if <code>other</code> is a substring - expected that <code>other</code> is a string.<br />If given object is Object it checks that <code>other</code> is a subobject - expected that <code>other</code> is a object.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Nested object</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].should.containEql(<span class="hljs-number">1</span>);
+[{ a: <span class="hljs-number">1</span> }, <span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>].should.containEql({ a: <span class="hljs-number">1</span> });
+
+<span class="hljs-string">'abc'</span>.should.containEql(<span class="hljs-string">'b'</span>);
+<span class="hljs-string">'ab1c'</span>.should.containEql(<span class="hljs-number">1</span>);
+
+({ a: <span class="hljs-number">10</span>, c: { d: <span class="hljs-number">10</span> }}).should.containEql({ a: <span class="hljs-number">10</span> });
+({ a: <span class="hljs-number">10</span>, c: { d: <span class="hljs-number">10</span> }}).should.containEql({ c: { d: <span class="hljs-number">10</span> }});
+({ a: <span class="hljs-number">10</span>, c: { d: <span class="hljs-number">10</span> }}).should.containEql({ b: <span class="hljs-number">10</span> });
+<span class="hljs-comment">// throws AssertionError: expected { a: 10, c: { d: 10 } } to contain { b: 10 }</span>
+<span class="hljs-comment">//            expected { a: 10, c: { d: 10 } } to have property b</span></code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion equality” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-eql"></a>
+            <h3><a id=""></a><code>Assertion#eql(val, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Deep object equality comparison. For full spec see <a href="https://github.com/shouldjs/equal/blob/master/test.js"><code>should-equal tests</code></a>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#deepEqual</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>val</code> <em>(*)</em>: <p>Expected value</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.be.eql(<span class="hljs-number">10</span>);
+(<span class="hljs-string">'10'</span>).should.not.be.eql(<span class="hljs-number">10</span>);
+(-<span class="hljs-number">0</span>).should.not.be.eql(+<span class="hljs-number">0</span>);
+
+<span class="hljs-literal">NaN</span>.should.be.eql(<span class="hljs-literal">NaN</span>);
+
+({ a: <span class="hljs-number">10</span>}).should.be.eql({ a: <span class="hljs-number">10</span> });
+[ <span class="hljs-string">'a'</span> ].should.not.be.eql({ <span class="hljs-string">'0'</span>: <span class="hljs-string">'a'</span> });</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-equal"></a>
+            <h3><a id=""></a><code>Assertion#equal(val, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Exact comparison using ===.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#exactly</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>val</code> <em>(*)</em>: <p>Expected value</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-number">10.</span>should.be.equal(<span class="hljs-number">10</span>);
+<span class="hljs-string">'a'</span>.should.be.exactly(<span class="hljs-string">'a'</span>);
+
+should(<span class="hljs-literal">null</span>).be.exactly(<span class="hljs-literal">null</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-equaloneof"></a>
+            <h3><a id=""></a><code>Assertion#equalOneOf(vals)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Exact comparison using === to be one of supplied objects.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>vals</code> <em>(*)</em>: <p>Expected values</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-string">'ab'</span>.should.be.equalOneOf(<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>);
+<span class="hljs-string">'ab'</span>.should.be.equalOneOf([<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>]);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-oneof"></a>
+            <h3><a id=""></a><code>Assertion#oneOf(vals)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Exact comparison using .eql to be one of supplied objects.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>vals</code> <em>(*)</em>: <p>Expected values</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({a: <span class="hljs-number">10</span>}).should.be.oneOf(<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>, {a: <span class="hljs-number">10</span>});
+({a: <span class="hljs-number">10</span>}).should.be.oneOf([<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'ab'</span>, {a: <span class="hljs-number">10</span>}]);</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion errors” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-throw"></a>
+            <h3><a id=""></a><code>Assertion#throw([message], [properties])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given function throws error with such message.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#throwError</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>[message]</code> <em>(string|RegExp|Function|Object|GeneratorFunction|GeneratorObject)</em>: <p>Message to match or properties</p>
+                </li>
+                
+                <li>
+                    <code>[properties]</code> <em>(Object)</em>: <p>Optional properties that will be matched to thrown error</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw();
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-string">'fail'</span>);
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-regexp">/fail/</span>);
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'fail'</span>) }).should.throw(<span class="hljs-built_in">Error</span>);
+<span class="hljs-keyword">var</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>();
+error.a = <span class="hljs-number">10</span>;
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> error; }).should.throw(<span class="hljs-built_in">Error</span>, { a: <span class="hljs-number">10</span> });
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">throw</span> error; }).should.throw({ a: <span class="hljs-number">10</span> });
+(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> throwError();
+}).should.throw();</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion es6” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-generator"></a>
+            <h3><a id=""></a><code>Assertion#generator()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is a generator object</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterable"></a>
+            <h3><a id=""></a><code>Assertion#iterable()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object supports es6 iterable protocol (just check<br />that object has property Symbol.iterator, which is a function)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-iterator"></a>
+            <h3><a id=""></a><code>Assertion#iterator()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object supports es6 iterator protocol (just check<br />that object has property next, which is a function)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion http” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-header"></a>
+            <h3><a id=""></a><code>Assertion#header(field, [val])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has property headers which contain <code>field</code> and optional <code>val</code>. Will work well with node Request/Response etc.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-http --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>field</code> <em>(string)</em>: <p>Name of field</p>
+                </li>
+                
+                <li>
+                    <code>[val]</code> <em>(string)</em>: <p>Optional value of field</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">res.should.have.header(<span class="hljs-string">'content-type'</span>, <span class="hljs-string">'application/json'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-html"></a>
+            <h3><a id=""></a><code>Assertion#html()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Shortcut for .should.header(&#39;content-type&#39;, &#39;text/html&#39;)</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-http --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">res.should.be.html();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-json"></a>
+            <h3><a id=""></a><code>Assertion#json()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Shortcut for .should.header(&#39;content-type&#39;, &#39;application/json&#39;)</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-http --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">res.should.be.json();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-status"></a>
+            <h3><a id=""></a><code>Assertion#status(code)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has property statusCode which equal to <code>code</code>. Works well with node&#39;s Response.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-http --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>code</code> <em>(number)</em>: <p>Status code value</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">res.should.have.status(<span class="hljs-number">200</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion matching” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-match"></a>
+            <h3><a id=""></a><code>Assertion#match(other, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts if given object match <code>other</code> object, using some assumptions:<br />First object matched if they are equal,<br />If <code>other</code> is a regexp and given object is a string check on matching with regexp<br />If <code>other</code> is a regexp and given object is an array check if all elements matched regexp<br />If <code>other</code> is a regexp and given object is an object check values on matching regexp<br />If <code>other</code> is a function check if this function throws AssertionError on given object or return false - it will be assumed as not matched<br />If <code>other</code> is an object check if the same keys matched with above rules<br />All other cases failed.</p><p>Usually it is right idea to add pre type assertions, like <code>.String()</code> or <code>.Object()</code> to be sure assertions will do what you are expecting.<br />Object iteration happen by keys (properties with enumerable: true), thus some objects can cause small pain. Typical example is js<br />Error - it by default has 2 properties <code>name</code> and <code>message</code>, but they both non-enumerable. In this case make sure you specify checking props (see examples).</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Object to match</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-string">'foobar'</span>.should.match(<span class="hljs-regexp">/^foo/</span>);
+<span class="hljs-string">'foobar'</span>.should.not.match(<span class="hljs-regexp">/^bar/</span>);
+
+({ a: <span class="hljs-string">'foo'</span>, c: <span class="hljs-string">'barfoo'</span> }).should.match(<span class="hljs-regexp">/foo$/</span>);
+
+[<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.match(<span class="hljs-regexp">/[a-z]/</span>);
+
+(<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">return</span> n &lt; <span class="hljs-number">0</span>;
+});
+(<span class="hljs-number">5</span>).should.not.match(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">it</span>) </span>{
+   it.should.be.an.Array();
+});
+({ a: <span class="hljs-number">10</span>, b: <span class="hljs-string">'abc'</span>, c: { d: <span class="hljs-number">10</span> }, d: <span class="hljs-number">0</span> }).should
+.match({ a: <span class="hljs-number">10</span>, b: <span class="hljs-regexp">/c$/</span>, c: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">it</span>) </span>{
+   <span class="hljs-keyword">return</span> it.should.have.property(<span class="hljs-string">'d'</span>, <span class="hljs-number">10</span>);
+}});
+
+[<span class="hljs-number">10</span>, <span class="hljs-string">'abc'</span>, { d: <span class="hljs-number">10</span> }, <span class="hljs-number">0</span>].should
+.match({ <span class="hljs-string">'0'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'1'</span>: <span class="hljs-regexp">/c$/</span>, <span class="hljs-string">'2'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">it</span>) </span>{
+   <span class="hljs-keyword">return</span> it.should.have.property(<span class="hljs-string">'d'</span>, <span class="hljs-number">10</span>);
+}});
+
+<span class="hljs-keyword">var</span> myString = <span class="hljs-string">'abc'</span>;
+
+myString.should.be.a.String().and.match(<span class="hljs-regexp">/abc/</span>);
+
+myString = {};
+
+myString.should.match(<span class="hljs-regexp">/abc/</span>); <span class="hljs-comment">//yes this will pass</span>
+<span class="hljs-comment">//better to do</span>
+myString.should.be.an.Object().and.not.empty().and.match(<span class="hljs-regexp">/abc/</span>);<span class="hljs-comment">//fixed</span>
+
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>)).should.match(<span class="hljs-regexp">/abc/</span>);<span class="hljs-comment">//passed because no keys</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>)).should.not.match({ message: <span class="hljs-regexp">/abc/</span> });<span class="hljs-comment">//check specified property</span></code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-matchany"></a>
+            <h3><a id=""></a><code>Assertion#matchAny(other, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts if any of given object values or array elements match <code>other</code> object, using some assumptions:<br />First object matched if they are equal,<br />If <code>other</code> is a regexp - matching with regexp<br />If <code>other</code> is a function check if this function throws AssertionError on given object or return false - it will be assumed as not matched<br />All other cases check if this <code>other</code> equal to each element</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#matchSome</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Object to match</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-regexp">/\w+/</span>);
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-string">'a'</span>);
+
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
+
+{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'b'</span>, c: <span class="hljs-string">'c'</span> }.should.matchAny(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-matcheach"></a>
+            <h3><a id=""></a><code>Assertion#matchEach(other, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts if given object values or array elements all match <code>other</code> object, using some assumptions:<br />First object matched if they are equal,<br />If <code>other</code> is a regexp - matching with regexp<br />If <code>other</code> is a function check if this function throws AssertionError on given object or return false - it will be assumed as not matched<br />All other cases check if this <code>other</code> equal to each element</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#matchEvery</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>other</code> <em>(*)</em>: <p>Object to match</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>].should.matchEach(<span class="hljs-regexp">/\w+/</span>);
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>].should.matchEach(<span class="hljs-string">'a'</span>);
+
+[ <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span>].should.matchEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });
+
+{ a: <span class="hljs-string">'a'</span>, b: <span class="hljs-string">'a'</span>, c: <span class="hljs-string">'a'</span> }.should.matchEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{ value.should.be.eql(<span class="hljs-string">'a'</span>) });</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion numbers” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-infinity"></a>
+            <h3><a id=""></a><code>Assertion#Infinity()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is not finite (positive or negative)</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.not.be.Infinity();
+<span class="hljs-literal">NaN</span>.should.not.be.Infinity();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-nan"></a>
+            <h3><a id=""></a><code>Assertion#NaN()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is NaN</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.not.be.NaN();
+<span class="hljs-literal">NaN</span>.should.be.NaN();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-above"></a>
+            <h3><a id=""></a><code>Assertion#above(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number above <code>n</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#greaterThan</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Margin number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.be.above(<span class="hljs-number">0</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-aboveorequal"></a>
+            <h3><a id=""></a><code>Assertion#aboveOrEqual(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number above <code>n</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#greaterThanOrEqual</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Margin number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.be.aboveOrEqual(<span class="hljs-number">0</span>);
+(<span class="hljs-number">10</span>).should.be.aboveOrEqual(<span class="hljs-number">10</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-approximately"></a>
+            <h3><a id=""></a><code>Assertion#approximately(value, delta, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number near some other <code>value</code> within <code>delta</code></p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>value</code> <em>(number)</em>: <p>Center number</p>
+                </li>
+                
+                <li>
+                    <code>delta</code> <em>(number)</em>: <p>Radius</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">9.99</span>).should.be.approximately(<span class="hljs-number">10</span>, <span class="hljs-number">0.1</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-below"></a>
+            <h3><a id=""></a><code>Assertion#below(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number below <code>n</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#lessThan</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Margin number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">0</span>).should.be.below(<span class="hljs-number">10</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-beloworequal"></a>
+            <h3><a id=""></a><code>Assertion#belowOrEqual(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number below <code>n</code>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#lessThanOrEqual</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Margin number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">0</span>).should.be.belowOrEqual(<span class="hljs-number">10</span>);
+(<span class="hljs-number">0</span>).should.be.belowOrEqual(<span class="hljs-number">0</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-within"></a>
+            <h3><a id=""></a><code>Assertion#within(start, finish, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given number between <code>start</code> and <code>finish</code> or equal one of them.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>start</code> <em>(number)</em>: <p>Start number</p>
+                </li>
+                
+                <li>
+                    <code>finish</code> <em>(number)</em>: <p>Finish number</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-number">10</span>).should.be.within(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion promises” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-promise"></a>
+            <h3><a id=""></a><code>Assertion#Promise()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is a Promise</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">promise.should.be.Promise()
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.a.Promise()
+(<span class="hljs-number">10</span>).should.not.be.a.Promise()</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-finally"></a>
+            <h3><a id=""></a><code>Assertion#finally()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is promise and wrap it in PromisedAssertion, which has all properties of Assertion.<br />That means you can chain as with usual Assertion.<br />Result of assertion is still .thenable and should be handled accordingly.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#eventually</em></div>
+            
+
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(PromisedAssertion)</em></p>: <p>Like Assertion, but .then this.obj in Assertion</p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); }))
+   .should.be.eventually.equal(<span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; resolve(<span class="hljs-number">10</span>))
+     .should.be.finally.equal(<span class="hljs-number">10</span>);
+});</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-fulfilled"></a>
+            <h3><a id=""></a><code>Assertion#fulfilled()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given promise will be fulfilled. Result of assertion is still .thenable and should be handled accordingly.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Promise)</em></p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-comment">// don't forget to handle async nature</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); })).should.be.fulfilled();
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; resolve(<span class="hljs-number">10</span>))
+     .should.be.fulfilled();
+});</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-fulfilledwith"></a>
+            <h3><a id=""></a><code>Assertion#fulfilledWith()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given promise will be fulfilled with some expected value (value compared using .eql).<br />Result of assertion is still .thenable and should be handled accordingly.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Promise)</em></p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-comment">// don't forget to handle async nature</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); }))
+   .should.be.fulfilledWith(<span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; resolve(<span class="hljs-number">10</span>))
+      .should.be.fulfilledWith(<span class="hljs-number">10</span>);
+});</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-rejected"></a>
+            <h3><a id=""></a><code>Assertion#rejected()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given promise will be rejected. Result of assertion is still .thenable and should be handled accordingly.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Promise)</em></p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-comment">// don't forget to handle async nature</span>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{ resolve(<span class="hljs-number">10</span>); }))
+   .should.not.be.rejected();
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>)))
+     .should.be.rejected();
+});</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-rejectedwith"></a>
+            <h3><a id=""></a><code>Assertion#rejectedWith()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given promise will be rejected with some sort of error. Arguments is the same for Assertion#throw.<br />Result of assertion is still .thenable and should be handled accordingly.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            <h4>Returns</h4>
+            <div class="returns-section">
+            <p> <em>(Promise)</em></p>
+            </div>
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">failedPromise</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
+    reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'boom'</span>))
+  })
+}
+failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>);
+failedPromise().should.be.rejectedWith(<span class="hljs-string">'boom'</span>);
+failedPromise().should.be.rejectedWith(<span class="hljs-regexp">/boom/</span>);
+failedPromise().should.be.rejectedWith(<span class="hljs-built_in">Error</span>, { message: <span class="hljs-string">'boom'</span> });
+failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> });
+
+<span class="hljs-comment">// test example with mocha it is possible to return promise</span>
+it(<span class="hljs-string">'is async'</span>, () =&gt; {
+   <span class="hljs-keyword">return</span> failedPromise().should.be.rejectedWith({ message: <span class="hljs-string">'boom'</span> });
+});</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion property” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-empty"></a>
+            <h3><a id=""></a><code>Assertion#empty()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object is empty. For strings, arrays and arguments it checks .length property, for objects it checks keys.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-string">''</span>.should.be.empty();
+[].should.be.empty();
+({}).should.be.empty();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-enumerable"></a>
+            <h3><a id=""></a><code>Assertion#enumerable(name, [val])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has enumerable property with optionally value. <strong>On success it change given object to be value of property</strong>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
+                </li>
+                
+                <li>
+                    <code>[val]</code> <em>(*)</em>: <p>Optional property value to check</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.enumerable(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-enumerables"></a>
+            <h3><a id=""></a><code>Assertion#enumerables(names)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has enumerable properties</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>names</code> <em>(...Array|string|Object)</em>: <p>Names of property</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">10</span> }).should.have.enumerables(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-keys"></a>
+            <h3><a id=""></a><code>Assertion#keys(keys)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has such keys. Compared to <code>properties</code>, <code>keys</code> does not accept Object as a argument.<br />When calling via .key current object in assertion changed to value of this key</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#key</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>keys</code> <em>(*)</em>: <p>Keys to check</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.keys(<span class="hljs-string">'a'</span>);
+({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">20</span> }).should.have.keys(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>);
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]])).should.have.key(<span class="hljs-number">1</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-length"></a>
+            <h3><a id=""></a><code>Assertion#length(n, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has property <code>length</code> with given value <code>n</code></p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#lengthOf</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>n</code> <em>(number)</em>: <p>Expected length</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>].should.have.length(<span class="hljs-number">2</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-ownproperty"></a>
+            <h3><a id=""></a><code>Assertion#ownProperty(name, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has own property. <strong>On success it change given object to be value of property</strong>.</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#hasOwnProperty</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.ownProperty(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-properties"></a>
+            <h3><a id=""></a><code>Assertion#properties(names)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has properties. On this method affect .any modifier, which allow to check not all properties.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>names</code> <em>(...Array|string|Object)</em>: <p>Names of property</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.properties(<span class="hljs-string">'a'</span>);
+({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">20</span> }).should.have.properties([ <span class="hljs-string">'a'</span> ]);
+({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">20</span> }).should.have.properties({ b: <span class="hljs-number">20</span> });</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-property"></a>
+            <h3><a id=""></a><code>Assertion#property(name, [val])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has property with optionally value. <strong>On success it change given object to be value of property</strong>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
+                </li>
+                
+                <li>
+                    <code>[val]</code> <em>(*)</em>: <p>Optional property value to check</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.property(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-propertybypath"></a>
+            <h3><a id=""></a><code>Assertion#propertyByPath(properties)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has nested property in depth by path. <strong>On success it change given object to be value of final property</strong>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>properties</code> <em>(...Array|string)</em>: <p>Properties path to search</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: {b: <span class="hljs-number">10</span>}}).should.have.propertyByPath(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>).eql(<span class="hljs-number">10</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-propertywithdescriptor"></a>
+            <h3><a id=""></a><code>Assertion#propertyWithDescriptor(name, desc)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has some descriptor. <strong>On success it change given object to be value of property</strong>.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
+                </li>
+                
+                <li>
+                    <code>desc</code> <em>(Object)</em>: <p>Descriptor like used in Object.defineProperty (not required to add all properties)</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.propertyWithDescriptor(<span class="hljs-string">'a'</span>, { enumerable: <span class="hljs-literal">true</span> });</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-size"></a>
+            <h3><a id=""></a><code>Assertion#size(s)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has such size.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>s</code> <em>(number)</em>: <p>Size to check</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.size(<span class="hljs-number">1</span>);
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]])).should.have.size(<span class="hljs-number">1</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-value"></a>
+            <h3><a id=""></a><code>Assertion#value(key, value)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts given object has such value for given key</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>key</code> <em>(*)</em>: <p>Key to check</p>
+                </li>
+                
+                <li>
+                    <code>value</code> <em>(*)</em>: <p>Value to check</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.value(<span class="hljs-string">'a'</span>, <span class="hljs-number">10</span>);
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]])).should.have.value(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion strings” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-endwith"></a>
+            <h3><a id=""></a><code>Assertion#endWith(str, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given string ends with prefix</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>str</code> <em>(string)</em>: <p>Prefix</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-string">'abca'</span>.should.endWith(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-startwith"></a>
+            <h3><a id=""></a><code>Assertion#startWith(str, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given string starts with prefix</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>str</code> <em>(string)</em>: <p>Prefix</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-string">'abc'</span>.should.startWith(<span class="hljs-string">'a'</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion stubs” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledon"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledOn(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called with given object as this always. So if you call stub several times<br />all should be with the same object</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>: <ul>
+<li>object that was used as this</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+<span class="hljs-keyword">var</span> obj = {};
+callback.call(obj);
+callback.should.be.alwaysCalledOn(obj);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwith"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWith(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+
+callback(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+callback.should.be.alwaysCalledWith(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwithexactly"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithExactly(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy was always called with the provided arguments and no others.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwithmatch"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithMatch(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if spy was always called with matching arguments (and possibly others).</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwayscalledwithnew"></a>
+            <h3><a id=""></a><code>Assertion#alwaysCalledWithNew()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> Class = sinon.spy();
+
+<span class="hljs-keyword">var</span> c1 = <span class="hljs-keyword">new</span> Class();
+<span class="hljs-keyword">var</span> c2 = <span class="hljs-keyword">new</span> Class();
+
+Class.should.be.alwaysCalledWithNew;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-alwaysthrew"></a>
+            <h3><a id=""></a><code>Assertion#alwaysThrew(ex)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy always threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>ex</code> <em>(string|Error)</em>: <ul>
+<li>exception to be thrown</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-callcount"></a>
+            <h3><a id=""></a><code>Assertion#callCount(count)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exact number of times</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>count</code> <em>(Number)</em>: <ul>
+<li>number of calles</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback.should.have.callCount(<span class="hljs-number">0</span>);
+callback();
+callback.should.have.callCount(<span class="hljs-number">1</span>);
+callback();
+callback.should.have.callCount(<span class="hljs-number">2</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-called"></a>
+            <h3><a id=""></a><code>Assertion#called()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at least once</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback.should.be.called();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledon"></a>
+            <h3><a id=""></a><code>Assertion#calledOn(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called with given object as this</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(*)</em>: <ul>
+<li>object that was used as this</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+<span class="hljs-keyword">var</span> obj = {};
+callback.call(obj);
+callback.should.be.calledOn(obj);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledonce"></a>
+            <h3><a id=""></a><code>Assertion#calledOnce()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exactly once</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback.should.be.calledOnce();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledthrice"></a>
+            <h3><a id=""></a><code>Assertion#calledThrice()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exactly thrice</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback();
+callback();
+callback.should.be.calledThrice();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledtwice"></a>
+            <h3><a id=""></a><code>Assertion#calledTwice()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert stub was called at exactly twice</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+callback();
+callback();
+callback.should.be.calledTwice();</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwith"></a>
+            <h3><a id=""></a><code>Assertion#calledWith(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts that stub was called with given arguments</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+
+callback(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+callback.should.be.calledWith(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwithexactly"></a>
+            <h3><a id=""></a><code>Assertion#calledWithExactly(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if call received provided arguments and no others.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwithmatch"></a>
+            <h3><a id=""></a><code>Assertion#calledWithMatch(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if spy was called with matching arguments (and possibly others).</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-calledwithnew"></a>
+            <h3><a id=""></a><code>Assertion#calledWithNew()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Asserts that stub was called with new</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> Class = sinon.spy();
+
+<span class="hljs-keyword">var</span> c = <span class="hljs-keyword">new</span> Class();
+
+Class.should.be.calledWithNew;</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-nevercalledwith"></a>
+            <h3><a id=""></a><code>Assertion#neverCalledWith(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if the spy/stub was never called with the provided arguments.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <h4>Example</h4>
+            <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> callback = sinon.spy();
+
+callback(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+callback.should.be.neverCalledWith(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-nevercalledwithmatch"></a>
+            <h3><a id=""></a><code>Assertion#neverCalledWithMatch(args)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Returns true if the spy/stub was never called with matching arguments.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>args</code> <em>(*)</em>: <ul>
+<li>arguments that was used for calling</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-threw"></a>
+            <h3><a id=""></a><code>Assertion#threw(ex)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Passes if the spy threw the given exception. The exception can be a<br />string denoting its type, or an actual object. If no argument is<br />provided, the assertion passes if the spy ever threw any exception.</p></div>
+
+            
+            
+            <h4>Module</h4>
+            <div><code>npm i should-sinon --save-dev</code></div>
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>ex</code> <em>(string|Error)</em>: <ul>
+<li>exception to be thrown</li>
+</ul>
+
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <h2><code>“assertion types” Members</code></h2>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-array"></a>
+            <h3><a id=""></a><code>Assertion#Array()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is array</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-boolean"></a>
+            <h3><a id=""></a><code>Assertion#Boolean()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is boolean</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-date"></a>
+            <h3><a id=""></a><code>Assertion#Date()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is a date</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-error"></a>
+            <h3><a id=""></a><code>Assertion#Error()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is error</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-function"></a>
+            <h3><a id=""></a><code>Assertion#Function()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is function</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-number"></a>
+            <h3><a id=""></a><code>Assertion#Number()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is number</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-object"></a>
+            <h3><a id=""></a><code>Assertion#Object()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is object</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-string"></a>
+            <h3><a id=""></a><code>Assertion#String()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is string</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-arguments"></a>
+            <h3><a id=""></a><code>Assertion#arguments()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is arguments</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#Arguments</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-class"></a>
+            <h3><a id=""></a><code>Assertion#class()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object has some internal [[Class]], via Object.prototype.toString call</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#Class</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-instanceof"></a>
+            <h3><a id=""></a><code>Assertion#instanceof(constructor, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is instance of <code>constructor</code></p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#instanceOf</em></div>
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>constructor</code> <em>(Function)</em>: <p>Constructor function</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-null"></a>
+            <h3><a id=""></a><code>Assertion#null()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is null</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#Null</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-type"></a>
+            <h3><a id=""></a><code>Assertion#type(type, [description])</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object has some type using <code>typeof</code></p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>type</code> <em>(string)</em>: <p>Type name</p>
+                </li>
+                
+                <li>
+                    <code>[description]</code> <em>(string)</em>: <p>Optional message</p>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-undefined"></a>
+            <h3><a id=""></a><code>Assertion#undefined()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Assert given object is undefined</p></div>
+
+            
+            
+            
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#Undefined</em></div>
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+
+    </div>
+    
+</div>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58263117-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
