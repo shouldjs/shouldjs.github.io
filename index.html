@@ -485,16 +485,6 @@
             
         
             
-            <li><a href="#assertion-enumerable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">enumerable</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-enumerables"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">enumerables</code></b></a></li>
-            
-            
-        
-            
             <li><a href="#assertion-keys"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">keys</code></b></a></li>
             
             
@@ -3399,82 +3389,6 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
             <pre><code class="hljs javascript"><span class="hljs-string">''</span>.should.be.empty();
 [].should.be.empty();
 ({}).should.be.empty();</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-enumerable"></a>
-            <h3><a id=""></a><code>Assertion#enumerable(name, [val])</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Asserts given object has enumerable property with optionally value. <strong>On success it change given object to be value of property</strong>.</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
-                </li>
-                
-                <li>
-                    <code>[val]</code> <em>(*)</em>: <p>Optional property value to check</p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.enumerable(<span class="hljs-string">'a'</span>);</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-enumerables"></a>
-            <h3><a id=""></a><code>Assertion#enumerables(names)</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Asserts given object has enumerable properties</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>names</code> <em>(...Array|string|Object)</em>: <p>Names of property</p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">10</span> }).should.have.enumerables(<span class="hljs-string">'a'</span>);</code></pre>
             
             <hr/>
         </div>
