@@ -17,6 +17,11 @@
         <ul>
         
             
+            <li><a href="#"><b><code class="name"></code></b></a></li>
+            
+            
+        
+            
             <li><a href="#assertion-add"><code class='parent'>Assertion</code><code class='mtype'>.</code><b><code class="name">add</code></b></a></li>
             
             
@@ -32,12 +37,42 @@
             
         
             
+            <li><a href="#param_regexp"><b><code class="name">PARAM_REGEXP</code></b></a></li>
+            
+            
+        
+            
             <li><a href="#promisedassertion"><b><code class="name">PromisedAssertion</code></b></a></li>
             
             
         
             
-            <li><a href="#should"><b><code class="name">should</code></b></a></li>
+            <li><a href="#type_regexp"><b><code class="name">TYPE_REGEXP</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#format"><b><code class="name">format</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#format"><b><code class="name">format</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#parse"><b><code class="name">parse</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#root"><b><code class="name">root</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#should-1"><b><code class="name">should$1</code></b></a></li>
             
             
         
@@ -95,6 +130,11 @@
         
             
             <li><a href="#assertion-not"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">not</code></b></a></li>
+            
+            
+        
+            
+            <li><a href="#assertion-only"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">only</code></b></a></li>
             
             
         
@@ -269,12 +309,16 @@
             <li><a href="#assertion-eql"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">eql</code></b></a></li>
             
             
+            <li><a href="#assertion-eql" class="alias"><code>Assertion#eqls</code> → <code>Assertion#eql</code></a></li>
+            
             <li><a href="#assertion-eql" class="alias"><code>Assertion#deepEqual</code> → <code>Assertion#eql</code></a></li>
             
         
             
             <li><a href="#assertion-equal"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">equal</code></b></a></li>
             
+            
+            <li><a href="#assertion-equal" class="alias"><code>Assertion#equals</code> → <code>Assertion#equal</code></a></li>
             
             <li><a href="#assertion-equal" class="alias"><code>Assertion#exactly</code> → <code>Assertion#equal</code></a></li>
             
@@ -333,7 +377,7 @@
         <ul>
         
             
-            <li><a href="#assertion-header"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">header</code></b></a></li>
+            <li><a href="#assertion-contenttype"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">contentType</code></b></a></li>
             
             
         
@@ -348,7 +392,7 @@
             
         
             
-            <li><a href="#assertion-status"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">status</code></b></a></li>
+            <li><a href="#assertion-xml"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">xml</code></b></a></li>
             
             
         
@@ -456,10 +500,14 @@
             <li><a href="#assertion-fulfilled"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">fulfilled</code></b></a></li>
             
             
+            <li><a href="#assertion-fulfilled" class="alias"><code>Assertion#resolved</code> → <code>Assertion#fulfilled</code></a></li>
+            
         
             
             <li><a href="#assertion-fulfilledwith"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">fulfilledWith</code></b></a></li>
             
+            
+            <li><a href="#assertion-fulfilledwith" class="alias"><code>Assertion#resolvedWith</code> → <code>Assertion#fulfilledWith</code></a></li>
             
         
             
@@ -481,16 +529,6 @@
         
             
             <li><a href="#assertion-empty"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">empty</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-enumerable"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">enumerable</code></b></a></li>
-            
-            
-        
-            
-            <li><a href="#assertion-enumerables"><code class='parent'>Assertion</code><code class='mtype'>#</code><b><code class="name">enumerables</code></b></a></li>
             
             
         
@@ -762,6 +800,30 @@
         
         
         <div class="doc-block">
+            <a id=""></a>
+            <h3><a id=""></a><code>()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Detect free variable <code>self</code>.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
             <a id="assertion-add"></a>
             <h3><a id=""></a><code>Assertion.add(name, func)</code></h3>
 
@@ -884,6 +946,30 @@
         
         
         <div class="doc-block">
+            <a id="param_regexp"></a>
+            <h3><a id=""></a><code>PARAM_REGEXP()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>RegExp to match *( &quot;;&quot; parameter ) in RFC 7231 sec 3.1.1.1</p><p>parameter     = token &quot;=&quot; ( token / quoted-string )<br />token         = 1<em>tchar<br />tchar         = &quot;!&quot; / &quot;#&quot; / &quot;$&quot; / &quot;%&quot; / &quot;&amp;&quot; / &quot;&#39;&quot; / &quot;</em>&quot;<br />              / &quot;+&quot; / &quot;-&quot; / &quot;.&quot; / &quot;^&quot; / &quot;_&quot; / &quot;`&quot; / &quot;|&quot; / &quot;~&quot;<br />              / DIGIT / ALPHA<br />              ; any VCHAR, except delimiters<br />quoted-string = DQUOTE *( qdtext / quoted-pair ) DQUOTE<br />qdtext        = HTAB / SP / %x21 / %x23-5B / %x5D-7E / obs-text<br />obs-text      = %x80-FF<br />quoted-pair   = &quot;\&quot; ( HTAB / SP / VCHAR / obs-text )</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
             <a id="promisedassertion"></a>
             <h3><a id=""></a><code>PromisedAssertion(obj)</code></h3>
 
@@ -917,8 +1003,146 @@
         
         
         <div class="doc-block">
-            <a id="should"></a>
-            <h3><a id=""></a><code>should(obj)</code></h3>
+            <a id="type_regexp"></a>
+            <h3><a id=""></a><code>TYPE_REGEXP()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>RegExp to match type in RFC 7231 sec 3.1.1.1</p><p>media-type = type &quot;/&quot; subtype<br />type       = token<br />subtype    = token</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="format"></a>
+            <h3><a id=""></a><code>format</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Module exports.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="format"></a>
+            <h3><a id=""></a><code>format(obj)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Format object to media type.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>obj</code> <em>(object)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="parse"></a>
+            <h3><a id=""></a><code>parse(string)</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Parse media type to object.</p></div>
+
+            
+            
+            
+            
+
+            
+            <h4>Arguments</h4>
+            <ol>
+                
+                <li>
+                    <code>string</code> <em>(string|object)</em>
+                </li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="root"></a>
+            <h3><a id=""></a><code>root()</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Used as a reference to the global object.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="should-1"></a>
+            <h3><a id=""></a><code>should$1(obj)</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
@@ -1333,6 +1557,30 @@ a.fail();
             </div>
 
             <div class="description-section" ><p>Negation modifier. Current assertion chain become negated. Each call invert negation on current assertion.</p></div>
+
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <hr/>
+        </div>
+        
+        
+        <div class="doc-block">
+            <a id="assertion-only"></a>
+            <h3><a id=""></a><code>Assertion#only</code></h3>
+
+            <div>
+                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
+            </div>
+
+            <div class="description-section" ><p>Only modifier - currently used with .keys to check if object contains only exactly this .keys</p></div>
 
             
             
@@ -2016,7 +2264,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Simple chaining. It actually do nothing.</p></div>
+            <div class="description-section" ><p>Simple chaining to improve readability. Does nothing.</p></div>
 
             
             
@@ -2186,7 +2434,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
             
             
             <h4>Aliases</h4>
-            <div><em>Assertion#deepEqual</em></div>
+            <div><em>Assertion#eqls, Assertion#deepEqual</em></div>
             
 
             
@@ -2236,7 +2484,7 @@ should(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>
             
             
             <h4>Aliases</h4>
-            <div><em>Assertion#exactly</em></div>
+            <div><em>Assertion#equals, Assertion#exactly</em></div>
             
 
             
@@ -2486,14 +2734,14 @@ error.a = <span class="hljs-number">10</span>;
         
         
         <div class="doc-block">
-            <a id="assertion-header"></a>
-            <h3><a id=""></a><code>Assertion#header(field, [val])</code></h3>
+            <a id="assertion-contenttype"></a>
+            <h3><a id=""></a><code>Assertion#contentType(type, [charset])</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Asserts given object has property headers which contain <code>field</code> and optional <code>val</code>. Will work well with node Request/Response etc.</p></div>
+            <div class="description-section" ><p>Check if response have header content-type with given type and charset</p></div>
 
             
             
@@ -2508,11 +2756,11 @@ error.a = <span class="hljs-number">10</span>;
             <ol>
                 
                 <li>
-                    <code>field</code> <em>(string)</em>: <p>Name of field</p>
+                    <code>type</code> <em>(string)</em>
                 </li>
                 
                 <li>
-                    <code>[val]</code> <em>(string)</em>: <p>Optional value of field</p>
+                    <code>[charset]</code> <em>(string)</em>
                 </li>
                 
             </ol>
@@ -2520,9 +2768,6 @@ error.a = <span class="hljs-number">10</span>;
             
             
             
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">res.should.have.header(<span class="hljs-string">'content-type'</span>, <span class="hljs-string">'application/json'</span>);</code></pre>
             
             <hr/>
         </div>
@@ -2589,14 +2834,14 @@ error.a = <span class="hljs-number">10</span>;
         
         
         <div class="doc-block">
-            <a id="assertion-status"></a>
-            <h3><a id=""></a><code>Assertion#status(code)</code></h3>
+            <a id="assertion-xml"></a>
+            <h3><a id=""></a><code>Assertion#xml()</code></h3>
 
             <div>
                 <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
             </div>
 
-            <div class="description-section" ><p>Asserts given object has property statusCode which equal to <code>code</code>. Works well with node&#39;s Response.</p></div>
+            <div class="description-section" ><p>Shortcut for .should.header(&#39;content-type&#39;, &#39;application/xml&#39;)</p></div>
 
             
             
@@ -2607,21 +2852,12 @@ error.a = <span class="hljs-number">10</span>;
             
 
             
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>code</code> <em>(number)</em>: <p>Status code value</p>
-                </li>
-                
-            </ol>
-            
             
             
             
             
             <h4>Example</h4>
-            <pre><code class="hljs javascript">res.should.have.status(<span class="hljs-number">200</span>);</code></pre>
+            <pre><code class="hljs javascript">res.should.be.xml();</code></pre>
             
             <hr/>
         </div>
@@ -3218,6 +3454,9 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
             
             
             
+            <h4>Aliases</h4>
+            <div><em>Assertion#resolved</em></div>
+            
 
             
             
@@ -3256,6 +3495,9 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
             
             
             
+            
+            <h4>Aliases</h4>
+            <div><em>Assertion#resolvedWith</em></div>
             
 
             
@@ -3405,82 +3647,6 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
         
         
         <div class="doc-block">
-            <a id="assertion-enumerable"></a>
-            <h3><a id=""></a><code>Assertion#enumerable(name, [val])</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Asserts given object has enumerable property with optionally value. <strong>On success it change given object to be value of property</strong>.</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>name</code> <em>(string)</em>: <p>Name of property</p>
-                </li>
-                
-                <li>
-                    <code>[val]</code> <em>(*)</em>: <p>Optional property value to check</p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.enumerable(<span class="hljs-string">'a'</span>);</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
-            <a id="assertion-enumerables"></a>
-            <h3><a id=""></a><code>Assertion#enumerables(names)</code></h3>
-
-            <div>
-                <a href="#toc" title="Jump back to the TOC.">&#x24C9;</a>
-            </div>
-
-            <div class="description-section" ><p>Asserts given object has enumerable properties</p></div>
-
-            
-            
-            
-            
-
-            
-            <h4>Arguments</h4>
-            <ol>
-                
-                <li>
-                    <code>names</code> <em>(...Array|string|Object)</em>: <p>Names of property</p>
-                </li>
-                
-            </ol>
-            
-            
-            
-            
-            
-            <h4>Example</h4>
-            <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">10</span> }).should.have.enumerables(<span class="hljs-string">'a'</span>);</code></pre>
-            
-            <hr/>
-        </div>
-        
-        
-        <div class="doc-block">
             <a id="assertion-keys"></a>
             <h3><a id=""></a><code>Assertion#keys(keys)</code></h3>
 
@@ -3515,7 +3681,9 @@ it(<span class="hljs-string">'is async'</span>, () =&gt; {
             <h4>Example</h4>
             <pre><code class="hljs javascript">({ a: <span class="hljs-number">10</span> }).should.have.keys(<span class="hljs-string">'a'</span>);
 ({ a: <span class="hljs-number">10</span>, b: <span class="hljs-number">20</span> }).should.have.keys(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>);
-(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]])).should.have.key(<span class="hljs-number">1</span>);</code></pre>
+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]])).should.have.key(<span class="hljs-number">1</span>);
+
+json.should.have.only.keys(<span class="hljs-string">'type'</span>, <span class="hljs-string">'version'</span>)</code></pre>
             
             <hr/>
         </div>
